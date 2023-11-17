@@ -1,32 +1,35 @@
-<section class="containerFilter">
-  <section class="containerModal">
-    <div class="filterSpecies">
-      <label for="filterSpecies">Filtrar por especie: </label>
-      <select
-        id="filterSpecies"
-        name="speciesCharacter"
-        data-testid="select-filter"
-      >
-        <option value="" disabled selected>
-          -- selecciona --
-        </option>
-        <option value="Desconocido">desconocido</option>
-        <option value="Droide">droide</option>
-        <option value="Humano">humano</option>
-        <option value="Hutt">hutt</option>
-        <option value="Rodian">rodian</option>
-        <option value="Togruta">togruta</option>
-        <option value="Wookiee">wookiee</option>
-        <option value="Zabrak">zabrak</option>
-      </select>
-    </div>
-    <div class="filterAffiliation">
-      <label for="filteraffiliation">Filtrar por afiliación: </label>
-      <select
-        id="filteraffiliation"
-        name="affiliationCharacter"
-        data-testid="select-filter-affiliation"
-      >
+
+
+export const renderItemsFilterOrder = (data) => {
+  let cajaDerenderizadoFilterOrder = '<div>';
+  for (let i = 0; i < data.length; i++) {
+    const filtroyOrdenamiento = `<section class="containerFilter">
+                                 <section class="containerModal">
+                                   <div class="filterSpecies">
+                                   <label for="filterSpecies">Filtrar por especie: </label>
+                                      <select
+                                        id="filterSpecies"
+                                       name="speciesCharacter"
+                                       data-testid="select-filter"
+                                              >
+                               <option value="" disabled selected>    -- selecciona --   </option>
+                               <option value="Desconocido">desconocido</option>
+                               <option value="Droide">droide</option>
+                               <option value="Humano">humano</option>
+                               <option value="Hutt">hutt</option>
+                               <option value="Rodian">rodian</option>
+                               <option value="Togruta">togruta</option>
+                               <option value="Wookiee">wookiee</option>
+                               <option value="Zabrak">zabrak</option>
+                                      </select>
+                                  </div>
+                                    <div class="filterAffiliation">
+                                      <label for="filteraffiliation">Filtrar por afiliación: </label>
+                                        <select
+                                          id="filteraffiliation"
+                                          name="affiliationCharacter"
+                                         data-testid="select-filter-affiliation"
+                                               >
         <option value="" disabled selected>
           -- selecciona --
         </option>
@@ -55,3 +58,11 @@
     </div>
   </section>
 </section>;
+`;
+    cajaDerenderizadoFilterOrder += filtroyOrdenamiento;
+  }
+  return cajaDerenderizadoFilterOrder += '</div>';
+};
+
+
+
