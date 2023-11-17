@@ -23,3 +23,6 @@ export const clearCharacter = () => {
   const root = document.getElementById("root");
   root.innerHTML = "";
 };
+
+//crear el ul donde van a estar las tarjetas
+

@@ -3,17 +3,6 @@
 import { renderItems } from "./components/cards.js";
 import {data} from "../data/data.js";
 
-//crear el ul donde van a estar las tarjetas
-
-const divDeTarjetasHtml = document.getElementById('root');
-const contenedorDeTarjetas = document.createElement('ul');
-const copiaDataDePersonajes = [...data];
-console.log(copiaDataDePersonajes);
-const renderizacionData = renderItems(copiaDataDePersonajes);
-divDeTarjetasHtml.innerHTML = renderizacionData;
-
-divDeTarjetasHtml.appendChild(contenedorDeTarjetas);
-contenedorDeTarjetas.classList.add('character');
 
 
 
