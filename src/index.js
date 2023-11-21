@@ -1,8 +1,13 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
+import { renderItems } from "./components/cards.js";
+import {data} from "../data/data.js";
+
+
+
+
 /*
 import Example from './views/Example.js';
-
 Ejemplo de definición de rutas:
 
 const routes = {
