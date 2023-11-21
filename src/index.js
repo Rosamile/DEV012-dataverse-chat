@@ -1,24 +1,13 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
+//va el main, eventListener de todas las rutas, llamamos al router
 
-import { renderItems } from "./components/cards.js";
-import {data} from "../data/data.js";
+import { router } from "../src/router";
 
-
-
-
-/*
-import Example from './views/Example.js';
-Ejemplo de definición de rutas:
-
-const routes = {
-    "/": Example,
-    ...
-}
-*/
-
-/*
-TODO:
-1.- Definir rutas en router.
-2.- Pasar "root element" a router.
-3.- Invocar el router para renderizar la vista correcta.
-*/
+document.addEventListener("DOMContentLoaded", () => {
+  router(); //inicia el enrrutador para config la vista inicial
+});
+export const navegate = (path) => {
+  window.History.pushState({}, "", path);
+  router();
+};
+window.addEventListener("popstate", router);

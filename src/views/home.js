@@ -1,7 +1,7 @@
 import { data } from "../data/data";
 
-const Home = async () => {
-  const characters = await data();
+export function Home() {
+  const character = data;
   const view = `
     <section class="containerFilter">
     <section class="containerModal">
@@ -59,10 +59,11 @@ const Home = async () => {
     </div>
   </li>
 `;
-  return view;
-};
+  document.getElementById("root").innerHTML = view;
 
-export default Home;
+  // return view;
+}
+
 /*import { renderItems } from "../components/cards";
 import { renderItemsFilterOrder } from "../components/filterOrder";
 //import {} from
@@ -88,4 +89,4 @@ const contenedorFiltroyOrdenamiento = document.createElement ('section');
 const renderizaciónFiltroyOrdenamiento = renderItemsFilterOrder (copiaDataDePersonajes);
 divDeFiltroyOrdenamiento.innerHTML = renderItemsFilterOrder;
 
-}*7
+}*/
