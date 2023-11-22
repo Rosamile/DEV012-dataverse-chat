@@ -1,4 +1,4 @@
-//import {data} from "../data/data.js";
+import data from "../data/data.js";
 
 export const renderItems = (data) => {
   let cajaDerenderizado = '<ul>';
@@ -24,5 +24,5 @@ export const clearCharacter = () => {
   root.innerHTML = "";
 };
 
-//crear el ul donde van a estar las tarjetas
+
 

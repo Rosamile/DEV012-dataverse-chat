@@ -1,18 +1,20 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 //va el main, eventListener de todas las rutas, llamamos al router
 
-import { routes } from "./Router/routes";
-import { setRootElement, setRoutes, renderView } from "./Router/router";
+import Example from "../views/Example.js";
+import { onURLChange, setRootElement, setRoutes } from "./router.js";
 
-setRoutes(routes);
-setRootElement(document.getElementById("root"));
-document.addEventListener("DOMContentLoaded", () => {
-});
-export const navegate = (path) => {
-  window.History.pushState({}, "", path);
- 
+const routes = {
+  "/error": "some",
+  "/": Example,
 };
-window.addEventListener("popstate", (event) => {
-  renderView("/");
-  console.log(event);
+
+const viewContainer = document.getElementById("root");
+setRoutes(routes);
+setRootElement(viewContainer);
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log(event.target.location.pathname);
+  onURLChange(event.target.location.pathname);
 });
+
+console.log("hola aqui estoy");
