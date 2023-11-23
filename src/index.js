@@ -3,10 +3,13 @@
 
 import Example from "../views/Example.js";
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
+import { home } from "./views/home.js";
 
 const routes = {
   "/error": "some",
   "/": Example,
+
+  "/home":home,
 };
 
 const viewContainer = document.getElementById("root");
