@@ -1,8 +1,9 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
-export function Home() {
-  const character = data;
-  const view = `
+export function home() {
+//const character = data;
+  const view =
+  `
     <section class="containerFilter">
     <section class="containerModal">
       <div class="filterSpecies">
@@ -51,19 +52,12 @@ export function Home() {
       </div>
     </section>
   </section>
-
-  <li itemscope itemtype= "card" class="cards" itemprop="sort-order">
-    <img src="${data[i].imageUrl}" alt="img">
-    <div class="textCard">
-     <span><dt>Nombre: </dt><dd itemprop = "name">${data[i].name}</dd></span>
-    </div>
-  </li>
 `;
   document.getElementById("root").innerHTML = view;
 
 
   
-  // return view;
+  return view;
 }
 
 /*import { renderItems } from "../components/cards";

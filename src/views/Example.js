@@ -3,3 +3,5 @@ export const Example = () => {
   p.innerHTML = "hola mundo!!";
   return p;
 };
+
+export default Example;
