@@ -2,8 +2,8 @@ import { data } from "../data/data.js";
 
 export function home() {
 //const character = data;
-  const view =
-  `
+  const view = document.createElement ('div');
+  view.innerHTML =`
     <section class="containerFilter">
     <section class="containerModal">
       <div class="filterSpecies">
@@ -53,10 +53,7 @@ export function home() {
     </section>
   </section>
 `;
-  document.getElementById("root").innerHTML = view;
 
-
-  
   return view;
 }
 
