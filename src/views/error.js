@@ -4,7 +4,10 @@ const Error404 = () => {
     <h2>Error 404</h2>
     </div>
     `;
-  return view;
+  const errorView = document.createElement ('div');
+  errorView.innerHTML = view;
+
+  return errorView;
 };
 
 export default Error404;

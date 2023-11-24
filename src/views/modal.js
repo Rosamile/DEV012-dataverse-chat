@@ -1,4 +1,4 @@
-<section class="containermodal">
+/*<section class="containermodal">
   <article class="containeroverlay">
     <article class="popup">
       <h3>Elije una opción</h3>
@@ -14,4 +14,4 @@
       </button>
     </article>
   </article>
-</section>;
+</section>;*/

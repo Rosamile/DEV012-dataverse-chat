@@ -2,7 +2,7 @@
 let ROUTES = {};
 //Espacio encargado de contener las rutas del proyecto
 
-let rootElement = document.getElementById ('root');
+let rootElement = "";
 //Referencia al objeto HTML donde vamos a pintar el contenido del componente, debe apuntar a un lugar dentro del html ejemplo div =root
 
 //Se debe encapsular las variables para que solo sean conocidas en ese lugar y se hace de la siguiente forma primero set

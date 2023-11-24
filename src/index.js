@@ -4,12 +4,14 @@
 import Example from "../views/Example.js";
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { home } from "./views/home.js";
+import error404 from "./views/error.js";
+import modal from "./components/modal.js";
+import { renderItems } from "./views/infoCharacters.js";
 
 const routes = {
-  "/error": "some",
-  "/": Example,
-
   "/home":home,
+  "/error": error404,
+  "/personaje":renderItems,
 };
 
 const viewContainer = document.getElementById("root");
@@ -21,3 +23,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 console.log("hola aqui estoy");
+
+const modal = document.querySelector('modal2');
+const openModal = document.querySelector('hero_cta');
+const cerrarModal = document.querySelector('modal_close2')
+
+openModal.addEventListener('click',(e)=>{
+  e.preventDefault(),
+  modal.classList.add('modal2--show');
+
+});
+
+cerrarModal.addEventListener('click',(e)=>{
+  e.preventDefault(),
+  modal.classList.remove('modal2--show');
+
+});
