@@ -1,28 +1,19 @@
-import data from "../data/data.js";
-
-export const renderItems = (data) => {
-  let cajaDerenderizado = '<ul>';
-  for (let i=0;i<data.length;i++) {
-  const ul = `<li itemscope itemtype= "card" class="cards" itemprop="sort-order">
-                  <img src=${data[i].imageUrl} alt="img">
-                  <div class="textCard">
-                  <span><dt>Nombre: </dt><dd itemprop = "name">${data[i].name}</dd></span>
-                  <span><dt>Descriptción: </dt><dd itemprop = "shortDescription">${data[i].shortDescription}</dd></span>
-                  <span><dt>Especie: </dt><dd itemprop = "specie">${data[i].facts.speciesCharacter}</dd></span>
-                  <span><dt>Afiliación: </dt><dd itemprop = "affiliation">${data[i].facts.affiliationCharacter}</dd></span>
-                  <span><dt>Estatura: </dt><dd itemprop = "height">${data[i].facts.heightCharacter} m</dd></span>
-                  <span><dt>Edad: </dt><dd itemprop = "age">${data[i].facts.ageCharacter}</dd></span>
-                  </div>
-                 </li> `;
-    cajaDerenderizado+=ul;
-  }
-  return cajaDerenderizado+= '</ul>';
+export const renderCards = (data) => {
+  const ul = document.createElement("ul");
+  ul.classList.add("character");
+  console.log(data);
+  data.forEach((element) => {
+    const list = document.createElement("li");
+    list.setAttribute("itemscope", "");
+    list.setAttribute("itemtype", "card");
+    list.classList.add("cards");
+    list.setAttribute("id", element.id);
+    list.innerHTML = `
+<img src=${element.imageUrl} alt="${element.id}">
+<a href="#" itemprop="name">${element.name}</a>
+`;
+    ul.appendChild(list);
+  });
+  console.log(ul);
+  return ul;
 };
-
-export const clearCharacter = () => {
-  const root = document.getElementById("root");
-  root.innerHTML = "";
-};
-
-
-
