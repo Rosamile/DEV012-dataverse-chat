@@ -6,3 +6,5 @@ export const Example = () => {
   p.innerHTML = headerComponent;
   return p;
 };
+
+export default Example;

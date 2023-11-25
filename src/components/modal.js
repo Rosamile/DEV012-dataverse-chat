@@ -1,17 +1,18 @@
-<section class="containermodal">
-  <article class="containeroverlay">
-    <article class="popup">
-      <h3>Elije una opción</h3>
-      <label for="chatgroup">Selecciona un personaje</label>
-      <select class="chatindividual" id="chatindividual">
-        meter la data
-      </select>
-      <button class="button" id="">
-        Chat Grupal
-      </button>
-      <button class="button" id="btncerrar">
-        <i class="fa-solid fa-xmark" id="imgcerrar"></i>
-      </button>
-    </article>
-  </article>
-</section>;
+const modal = () => {
+  const view = `
+    <a href="#" class="hero_cta">Chat</a>
+    <section class="modal2 modal2--show">
+      <div class="modal_container2">
+      <h2 class="modal_title2">¡Chatea con nosotros!</h2>
+      <p class="modal_paragraph2">Registra a continuación la contraseña proporcionada</p>
+      <form class="modal_Apikey2" >
+        <input  class="modal_Apikey" placeholder="Ingresa contraseña" type="text"></input>
+      </form>
+      <br>
+      <a href="#" class="modal_close2" >Cerrar</a>
+    </div>
+    </section>
+  `;
+  return view;
+};
+export default modal;

@@ -22,3 +22,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 console.log("hola aqui estoy");
+
+const modal = document.querySelector("modal2");
+const openModal = document.querySelector("hero_cta");
+const cerrarModal = document.querySelector("modal_close2");
+
+openModal.addEventListener("click", (e) => {
+  e.preventDefault(), modal.classList.add("modal2--show");
+});
+
+cerrarModal.addEventListener("click", (e) => {
+  e.preventDefault(), modal.classList.remove("modal2--show");
+});
