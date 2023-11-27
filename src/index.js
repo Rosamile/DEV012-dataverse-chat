@@ -5,12 +5,12 @@ import { Example } from "../views/Example.js";
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { home } from "../views/home.js";
 import { Error404 } from "../views/error.js";
-import { renderItems } from "../views/infoCharacters.js";
+import { renderFacts } from "./views/infoCharacters.js";
 
 const routes = {
   "/error": Error404,
   "/": home,
-  "/facts": renderItems,
+  "/facts": renderFacts,
 };
 
 const viewContainer = document.getElementById("root");

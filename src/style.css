@@ -158,7 +158,7 @@ h4 {
   padding: 0;
   gap: 1rem;
 }
-.cardsBox .textCard {
+.cardsBox .factsCard {
   display: flex;
   flex-direction: column;
   text-align: left;

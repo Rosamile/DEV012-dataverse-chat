@@ -1,5 +1,27 @@
+import data from "../data/data";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { Facts } from "../components/Facts";
+
+export const infoCharacters = () => {
+ 
+  const factsViewView = document.createElement("div");
+  factsViewView.className = "viewFactsComponents";
+
+  const headerComponent = Header();
+  const footerComponent = Footer();
+
+  factsViewView.appendChild(headerComponent):
+  factsViewView.appendChild(footerComponent)
+ 
+  return factsViewView;
+};
+
+// Función para renderizar la información del personaje
+
+/*
 export const renderItems = (data) => {
-  const root = document.getElementById("root");
+  const facts = document.createElement("section");
 
   const ul = document.createElement("ul");
   root.appendChild(ul);
@@ -18,37 +40,9 @@ export const renderItems = (data) => {
   </li> `;
   }
   return ul;
-};
-
-export const clearCharacter = () => {
-  const root = document.getElementById("root");
-  root.innerHTML = "";
-};
+};*/
 
 //vamos a hacer fectch
 /*import getHash from "../utils/getHash";
 import getData from "../utils/getData";
-
-const Character = async () => {
-  const id = getHash();
-  const character = await getData(id);
-  const view = `
-<div class="Characters-inner">
-  <article class="Character-card">
-    <img src="${character.image}" alt="${character.name}">
-    <h2>${character.name}</h2>
-  </article>
-  <article class="Character-card">
-    <h3>Episode: <span>${character.episode.length}</span> </h3>
-    <h3>Status: <span>${character.status}</span></h3>
-    <h3>Species: <span>${character.species}</span> </h3>
-    <h3>Gender: <span>${character.gender}</span> </h3>
-    <h3>Origin: <span>${character.origin.name}</span></h3>
-    <h3>Last Location: <span>${character.location.name}</span></h3>
-  </article>
-</div>
-`;
-  return view;
-};
-
-export default Character;*/
+*/
