@@ -1,6 +1,6 @@
 export const Error404 = () => {
   const view = `
-    <div class = "Error404">
+    <div class = "error">
     <h2>Error 404</h2>
     </div>
     `;
@@ -8,3 +8,4 @@ export const Error404 = () => {
   errorView.innerHTML = view;
   return errorView;
 };
+

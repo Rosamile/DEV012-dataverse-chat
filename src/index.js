@@ -6,6 +6,7 @@ import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { home } from "../views/home.js";
 import { Error404 } from "../views/error.js";
 import { renderItems } from "../views/infoCharacters.js";
+import { modal } from "./components/modal.js";
 
 const routes = {
   "/error": Error404,
@@ -23,14 +24,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 console.log("hola aqui estoy");
 
-const modal = document.querySelector("modal2");
-const openModal = document.querySelector("hero_cta");
-const cerrarModal = document.querySelector("modal_close2");
 
+const openModal = document.querySelector('.hero_ctaapikey');
+const cerrarModal = document.querySelector('.modal_closeapikey');
+
+console.log(openModal);
 openModal.addEventListener("click", (e) => {
-  e.preventDefault(), modal.classList.add("modal2--show");
+  e.preventDefault(), modal.classList.add('modal--showapikey');
 });
 
 cerrarModal.addEventListener("click", (e) => {
-  e.preventDefault(), modal.classList.remove("modal2--show");
+  e.preventDefault(), modal.classList.remove('modal--showapikey');
 });
