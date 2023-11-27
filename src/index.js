@@ -10,7 +10,7 @@ import { renderItems } from "../views/infoCharacters.js";
 const routes = {
   "/error": Error404,
   "/": home,
-  "/cards": renderItems,
+  "/facts": renderItems,
 };
 
 const viewContainer = document.getElementById("root");

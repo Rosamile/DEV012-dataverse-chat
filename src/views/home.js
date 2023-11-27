@@ -20,9 +20,14 @@ export const home = () => {
   homeView.innerHTML += filterOrderComponent;
 
   const cardsComponent = renderCards(data);
+  console.log(cardsComponent);
+  cardsComponent.addEventListener("click", (event) => {
+    console.log(event);
+  });
+
   cardView.appendChild(cardsComponent);
   homeView.appendChild(cardView);
-  
+
   const footerComponent = Footer();
   homeView.innerHTML += footerComponent;
   return homeView;
