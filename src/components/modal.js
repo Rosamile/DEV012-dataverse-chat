@@ -1,6 +1,5 @@
-
 const modal = () => {
-    const view = `
+  const view = `
     <a href="#" class="hero_cta">Chat</a>
     <section class="modal2 modal2--show">
       <div class="modal_container2">
@@ -14,6 +13,6 @@ const modal = () => {
     </div>
     </section>
   `;
-    return view;
-    };
-    export default modal;
+  return view;
+};
+export default modal;

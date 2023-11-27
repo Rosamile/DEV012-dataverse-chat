@@ -3,6 +3,7 @@ let ROUTES = {};
 //Espacio encargado de contener las rutas del proyecto
 
 let rootElement = "";
+let dataCharacter = {};
 //Referencia al objeto HTML donde vamos a pintar el contenido del componente, debe apuntar a un lugar dentro del html ejemplo div =root
 
 //Se debe encapsular las variables para que solo sean conocidas en ese lugar y se hace de la siguiente forma primero set
@@ -50,4 +51,12 @@ export const onURLChange = (pathname) => {
   //convert the search params to and object
   //render the view with the pathname and objet
   renderView(pathname);
+};
+export const setDataCharacter = (data) => {
+  //aqui voy a guardar la info de cada personaje
+  dataCharacter = data;
+};
+export const getDataCharacter = () => {
+  //muestra la data guardada de cada personaje
+  return dataCharacter;
 };
