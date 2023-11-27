@@ -5,6 +5,7 @@ import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { renderCards } from "../components/cards.js";
 import data from "../data/data.js";
+import { modal } from "../components/modal.js";
 
 export const home = () => {
   let result = data;
@@ -31,4 +32,8 @@ export const home = () => {
   const footerComponent = Footer();
   homeView.innerHTML += footerComponent;
   return homeView;
+
+  const modalComponent = modal();
+modalView.innerHTML += modalComponent;
+return modalView;
 };
