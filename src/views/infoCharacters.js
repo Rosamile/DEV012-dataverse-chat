@@ -1,19 +1,13 @@
-import data from "../data/data";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Facts } from "../components/Facts";
+//import data from "../data/data";
+//import { Header } from "../components/Header";
+//import { Footer } from "../components/Footer";
+//import { Facts } from "../components/Facts";
 
-export const infoCharacters = () => {
- 
+export const infoCharacters = (props) => {
+  console.log(props);
   const factsViewView = document.createElement("div");
   factsViewView.className = "viewFactsComponents";
 
-  const headerComponent = Header();
-  const footerComponent = Footer();
-
-  factsViewView.appendChild(headerComponent):
-  factsViewView.appendChild(footerComponent)
- 
   return factsViewView;
 };
 

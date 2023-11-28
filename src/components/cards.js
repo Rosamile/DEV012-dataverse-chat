@@ -8,7 +8,9 @@ export const renderCards = (data) => {
     list.classList.add("cards");
     list.setAttribute("id", element.id);
     list.innerHTML = `
-<img id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
+<img onclick = '${() => console.log("algo aqui")}' id="image${
+      element.id
+    }" src="${element.imageUrl}" alt="${element.id}">
 <a href="#" itemprop="name">${element.name}</a>
 <span>
   <dt>Especie: </dt>
@@ -28,9 +30,10 @@ export const renderCards = (data) => {
 </span>
 
 `;
-
+    list.addEventListener("click", (event) => {
+      console.log("click existe");
+    });
     ul.appendChild(list);
   });
-  console.log(ul);
   return ul;
 };
