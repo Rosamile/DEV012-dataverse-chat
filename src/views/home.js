@@ -1,7 +1,7 @@
 //import los components
 
 import { filterOrder } from "../components/filterOrder.js";
-import { Header } from "../components/Header.js";
+import { Header } from "../components/header.js";
 import { Footer } from "../components/Footer.js";
 import { renderCards } from "../components/cards.js";
 import { stats } from "../components/stats.js";
@@ -14,7 +14,6 @@ import {
   computeStats,
   ageSumatory,
 } from "../lib/dataFuntion.js";
-import { modal } from "../components/modal.js";
 
 export const home = () => {
   let valueSelectSpecies = "";
@@ -50,7 +49,7 @@ export const home = () => {
   const dataFilter = data; // Considera si realmente necesitas esto o si puedes filtrar directamente sobre "data"
 
   const filterSpecies = homeView.querySelector("#filterSpecies");
-console.log (filterSpecies);
+  console.log(filterSpecies);
 
   filterSpecies.addEventListener("change", (event) => {
     const value = event.target.value;
@@ -73,7 +72,6 @@ console.log (filterSpecies);
   filterAffiliation.addEventListener("change", (event) => {
     const value = event.target.value;
     valueSelectAffiliation = value;
-    console.log(value);
     const dataFiltrada = filterByAffiliation(
       dataFilter,
       "affiliationCharacter",
@@ -115,7 +113,7 @@ console.log (filterSpecies);
       "Resultado de tu selección: " + computeStats(clearedData);
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(clearedData);
   });
-
+  // homeView.innerHTML += buttonClear;
   const buttonClear = homeView.querySelector("#clearFilter");
   buttonClear.addEventListener("click", (event) => {
     const cardsComponent = renderCards(data);
@@ -130,20 +128,5 @@ console.log (filterSpecies);
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
   });
 
-
-  homeView.innerHTML += modal();
-
-  const openModal = homeView.querySelector(".hero_ctaapikey");
-  const cerrarModal = homeView.querySelector(".modal_closeapikey");
-  const modalElements = homeView.querySelector(".modalapikey");
-  console.log(openModal);
-
-  openModal.addEventListener("click", (e) => {
-    e.preventDefault(), modalElements.classList.add("modal--showapikey");
-  });
-
-  cerrarModal.addEventListener("click", (e) => {
-    e.preventDefault(), modalElements.classList.remove("modal--showapikey");
-  });
   return homeView;
 };
