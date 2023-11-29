@@ -8,9 +8,9 @@ export const renderCards = (data) => {
     list.classList.add("cards");
     list.setAttribute("id", element.id);
     list.innerHTML = `
-<img onclick = '${() => console.log("algo aqui")}' id="image${
-      element.id
-    }" src="${element.imageUrl}" alt="${element.id}">
+
+
+<img id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
 <a href="#" itemprop="name">${element.name}</a>
 <span>
   <dt>Especie: </dt>
@@ -28,7 +28,6 @@ export const renderCards = (data) => {
   <dt>Edad: </dt>
   <dd itemprop="age">${element.facts.ageCharacter}</dd>
 </span>
- <img  class="imgtarjetas" id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
  <a href="#" itemprop="name">${element.name}</a>
 `;
 

@@ -6,7 +6,6 @@ import { Footer } from "../components/Footer.js";
 import { renderCards } from "../components/cards.js";
 import { stats } from "../components/stats.js";
 import data from "../data/data.js";
-import { renderFacts } from "../components/Facts.js";
 import {
   filterByAffiliation,
   filterBySpecies,
@@ -20,6 +19,7 @@ import { modal } from "../components/modal.js";
 export const home = () => {
   let valueSelectSpecies = "";
   let valueSelectAffiliation = "";
+
   let resultDataFilteredBySpecies = "";
   let resultDataFilteredByAffiliation = "";
   const homeView = document.createElement("div");
@@ -41,18 +41,21 @@ export const home = () => {
   cardView.appendChild(cardsComponent);
   homeView.appendChild(statsComponent);
 
-  const statsResult = document.getElementById("stats");
-  const ageSumResult = document.getElementById("sumAges");
+  homeView.appendChild(cardView);
+  homeView.appendChild(footerComponent);
+
+  const statsResult = homeView.querySelector("#stats");
+  const ageSumResult = homeView.querySelector("#sumAges");
   console.log(statsResult);
   const dataFilter = data; // Considera si realmente necesitas esto o si puedes filtrar directamente sobre "data"
-  document.body.appendChild(homeView);
 
-  const filterSpecies = document.getElementById("filterSpecies");
+  const filterSpecies = homeView.querySelector("#filterSpecies");
+console.log (filterSpecies);
 
   filterSpecies.addEventListener("change", (event) => {
     const value = event.target.value;
     valueSelectSpecies = value;
-    console.log(value);
+    console.log("hi");
     const dataFiltrada = filterBySpecies(dataFilter, "speciesCharacter", value);
     const cardsComponent = renderCards(dataFiltrada);
     cardView.innerHTML = "";
@@ -65,7 +68,7 @@ export const home = () => {
       "Sumatoria de edades: " + ageSumatory(dataFiltrada);
   });
 
-  const filterAffiliation = document.getElementById("filteraffiliation");
+  const filterAffiliation = homeView.querySelector("#filteraffiliation");
 
   filterAffiliation.addEventListener("change", (event) => {
     const value = event.target.value;
@@ -87,7 +90,9 @@ export const home = () => {
     ageSumResult.innerHTML =
       "Sumatoria de edades: " + ageSumatory(dataFiltrada);
   });
-  const selectSort = document.getElementById("sortBy");
+
+  const selectSort = homeView.querySelector("#sortBy");
+
   selectSort.addEventListener("change", (event) => {
     const clearedData = clearData([
       ...resultDataFilteredBySpecies,
@@ -111,7 +116,7 @@ export const home = () => {
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(clearedData);
   });
 
-  const buttonClear = document.getElementById("clearFilter");
+  const buttonClear = homeView.querySelector("#clearFilter");
   buttonClear.addEventListener("click", (event) => {
     const cardsComponent = renderCards(data);
     cardView.innerHTML = "";
@@ -125,15 +130,12 @@ export const home = () => {
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
   });
 
-  homeView.appendChild(cardView);
-  homeView.appendChild(footerComponent);
 
   homeView.innerHTML += modal();
 
-  document.body.appendChild(homeView);
-  const openModal = document.querySelector(".hero_ctaapikey");
-  const cerrarModal = document.querySelector(".modal_closeapikey");
-  const modalElements = document.querySelector(".modalapikey");
+  const openModal = homeView.querySelector(".hero_ctaapikey");
+  const cerrarModal = homeView.querySelector(".modal_closeapikey");
+  const modalElements = homeView.querySelector(".modalapikey");
   console.log(openModal);
 
   openModal.addEventListener("click", (e) => {

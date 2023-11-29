@@ -175,7 +175,7 @@ h4 {
   flex-direction: column;
   padding: 1rem 2rem 2rem 2rem;
 }
-.imgtarjetas {
+.cards img {
   width: 15rem;
   height: 15rem;
   border: 2px solid #3c0808;
@@ -202,28 +202,28 @@ a {
   padding-left: 1rem;
 }
 
-.hero_ctaapikey {
+#imgmodal {
   border: none;
     background-color:transparent;
     background-position:center;
     background-repeat:no-repeat;
     position: fixed;
-    width:auto;
+    width:10px;
     height:auto;
-    bottom: 0px;
+    bottom: 10px;
     margin-left: 750px;
   
     
   }
 
-#imgmodal {
+  #imgmodal {
       margin: 0;
       border-radius:100%;
       padding: 0px;
       transition: background-color 0.3s;
     }
 
-  #imgmodal:hover {
+    .hero_ctaapikey:hover {
     background: linear-gradient(90deg,
       rgba(255, 255, 255, 1) 0%,
       rgba(249, 99, 86, 1) 0%,
