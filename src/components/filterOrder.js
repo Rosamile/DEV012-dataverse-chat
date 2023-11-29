@@ -1,6 +1,7 @@
 export const filterOrder = () => {
-  const view = `
-    <section class="containerFilter">
+  const section = document.createElement("section");
+  section.classList.add("containerFilter");
+  section.innerHTML = `
     <section class="containerModal">
       <div class="filterSpecies">
         <label for="filterSpecies">Filtrar por especie: </label>
@@ -43,11 +44,9 @@ export const filterOrder = () => {
       </div>
 
       <div class="buttons">
-        <button id="applyFilter">Aplicar</button>
         <button id="clearFilter" data-testid="button-clear">Borrar</button>
       </div>
     </section>
-  </section>
 `;
-  return view;
+  return section;
 };

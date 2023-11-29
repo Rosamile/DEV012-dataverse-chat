@@ -59,3 +59,4 @@ export function ageSumatory(data) {
   });
   return agesSumatory;
 }
+

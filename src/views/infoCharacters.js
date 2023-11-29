@@ -1,6 +1,22 @@
-import data from "../data/data.js";
-import { Header } from "../components/Header.js";
-import { Footer } from "../components/Footer.js";
+
+//import data from "../data/data";
+//import { Header } from "../components/Header";
+//import { Footer } from "../components/Footer";
+//import { Facts } from "../components/Facts";
+
+export const infoCharacters = (props) => {
+  console.log(props);
+  const factsViewView = document.createElement("div");
+  factsViewView.className = "viewFactsComponents";
+
+  return factsViewView;
+};
+
+// Función para renderizar la información del personaje
+
+
+export const renderItems = (data) => {
+  const facts = document.createElement("section");
 
 export const infoCharacters = () => {
   pintar(data);
@@ -18,10 +34,6 @@ export const infoCharacters = () => {
 
 const infoCharactersComponents = document.querySelector('.cards');
 infoCharactersView.innerHTML += infoCharactersComponents;
-
-
-
-
 
   return infoCharactersView;
 
@@ -49,4 +61,9 @@ const pintar = (data) => {
   };
   console.log(ul);
   return ul;
-}
+};
+
+//vamos a hacer fectch
+/*import getHash from "../utils/getHash";
+import getData from "../utils/getData";
+*/
