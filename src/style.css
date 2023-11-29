@@ -202,6 +202,66 @@ a {
   padding-left: 1rem;
 }
 
+.modalapikey {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal--showapikey{
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.modal_containerapikey {
+  margin: auto;
+  width: 90%;
+  background-color: #3c0808;
+  font-family: "Passero one" sans-serif;
+  color: #d9d9d9;
+  max-width: 600px;
+  max-height: 90%;
+  border-radius: 20px 0px 20px 0px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: iem;
+  place-items: center;
+  grid-auto-columns: 100%;
+}
+
+.modal_titleapikey {
+  font-size: 2rem;
+}
+
+.modal_paragraphapikey {
+  margin-bottom: 10px;
+}
+.modal_closeapikey {
+  text-decoration: none;
+  color: #d9d9d9;
+  background-color: #559a3a;
+  padding: 1em 3em;
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.modal_closeapikey:hover {
+  background-color: #3c0808;
+  color: #d9d9d9;
+}
+.error h2 {
+color: #d9d9d9;
+font-size: xx-large;
+}
+
+
 @media only screen and (max-width: 1180px) and (min-width: 600px) {
   h1 {
     letter-spacing: 6px;
@@ -311,57 +371,3 @@ a {
   }
 }
 
-.modal2 {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #111111bd;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
-}
-.modal2--show {
-  opacity: 1;
-  pointer-events: unset;
-}
-
-.modal_container2 {
-  margin: auto;
-  width: 90%;
-  background-color: #3c0808;
-  font-family: "Passero one" sans-serif;
-  color: #d9d9d9;
-  max-width: 600px;
-  max-height: 90%;
-  border-radius: 20px 0px 20px 0px;
-  padding: 3em 2.5em;
-  display: grid;
-  gap: iem;
-  place-items: center;
-  grid-auto-columns: 100%;
-}
-
-.modal_title2 {
-  font-size: 2rem;
-}
-
-.modal_paragraph2 {
-  margin-bottom: 10px;
-}
-.modal_close2 {
-  text-decoration: none;
-  color: #d9d9d9;
-  background-color: #559a3a;
-  padding: 1em 3em;
-  border: 1px solid #000;
-  border-radius: 10px;
-  display: inline-block;
-  transition: background-color 0.3s;
-}
-
-.modal_close2:hover {
-  background-color: #3c0808;
-  color: #d9d9d9;
-}

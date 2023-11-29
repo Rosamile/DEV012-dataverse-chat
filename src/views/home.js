@@ -15,6 +15,7 @@ import {
   computeStats,
   ageSumatory,
 } from "../lib/dataFuntion.js";
+import { modal } from "../components/modal.js";
 
 export const home = () => {
   let valueSelectSpecies = "";
@@ -128,4 +129,8 @@ export const home = () => {
   homeView.appendChild(footerComponent);
 
   return homeView;
+
+  const modalComponent = modal();
+  modalView.innerHTML += modalComponent;
+  return modalView;
 };
