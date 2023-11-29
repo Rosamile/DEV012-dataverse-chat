@@ -9,7 +9,7 @@ export const renderCards = (data) => {
     list.classList.add("cards");
     list.setAttribute("id", element.id);
     list.innerHTML = `
- <img id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
+ <img  class="imgtarjetas" id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
  <a href="#" itemprop="name">${element.name}</a>
 `;
 

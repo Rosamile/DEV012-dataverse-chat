@@ -29,11 +29,27 @@ export const home = () => {
   cardView.appendChild(cardsComponent);
   homeView.appendChild(cardView);
 
+  
+
   const footerComponent = Footer();
   homeView.innerHTML += footerComponent;
-  return homeView;
 
-  const modalComponent = modal();
-modalView.innerHTML += modalComponent;
-return modalView;
+homeView.innerHTML += modal();
+
+document.body.appendChild(homeView);
+const openModal = document.querySelector(".hero_ctaapikey");
+const cerrarModal = document.querySelector('.modal_closeapikey');
+const modalElements = document.querySelector(".modalapikey");
+console.log(openModal);
+
+openModal.addEventListener("click", (e) => {
+  e.preventDefault(), modalElements.classList.add('modal--showapikey');
+});
+
+cerrarModal.addEventListener("click", (e) => {
+  e.preventDefault(), modalElements.classList.remove('modal--showapikey');
+
+});
+return homeView;
+
 };
