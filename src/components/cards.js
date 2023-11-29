@@ -28,8 +28,10 @@ export const renderCards = (data) => {
   <dt>Edad: </dt>
   <dd itemprop="age">${element.facts.ageCharacter}</dd>
 </span>
-
+ <img  class="imgtarjetas" id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
+ <a href="#" itemprop="name">${element.name}</a>
 `;
+
     list.addEventListener("click", (event) => {
       console.log("click existe");
     });

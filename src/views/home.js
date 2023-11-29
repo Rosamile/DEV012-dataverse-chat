@@ -7,6 +7,7 @@ import { renderCards } from "../components/cards.js";
 import data from "../data/data.js";
 import { renderFacts } from "../components/Facts.js";
 import { filterBySpecies } from "../lib/dataFuntion.js";
+import { modal } from "../components/modal.js";
 
 export const home = () => {
   const homeView = document.createElement("div");
@@ -44,7 +45,27 @@ export const home = () => {
 
   homeView.appendChild(cardView);
 
+  
+
   const footerComponent = Footer();
   homeView.innerHTML += footerComponent;
-  return homeView;
+
+homeView.innerHTML += modal();
+
+document.body.appendChild(homeView);
+const openModal = document.querySelector(".hero_ctaapikey");
+const cerrarModal = document.querySelector('.modal_closeapikey');
+const modalElements = document.querySelector(".modalapikey");
+console.log(openModal);
+
+openModal.addEventListener("click", (e) => {
+  e.preventDefault(), modalElements.classList.add('modal--showapikey');
+});
+
+cerrarModal.addEventListener("click", (e) => {
+  e.preventDefault(), modalElements.classList.remove('modal--showapikey');
+
+});
+return homeView;
+
 };
