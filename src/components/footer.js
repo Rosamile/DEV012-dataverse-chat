@@ -1,5 +1,6 @@
 export const Footer = () => {
-  const footer = `
+  const footer = document.createElement("footer");
+  footer.innerHTML = `
 <footer>
   <i class="fa-brands fa-github" style="color: #d7d700"></i>
   <a href="https://github.com/Rosamile/DEV012-dataverse-chat">By Rosa</a>

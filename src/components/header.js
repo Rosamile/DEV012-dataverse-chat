@@ -11,10 +11,7 @@ export const Header = (variable) => {
     <h2>Bienvenido a la Galaxia de STAR WARS ${variable}</h2>
     <h4>Explora los detalles de tus personajes favoritos de la Saga</h4>
   </main>
-  <div class="statistics">
-    <p id="stats"></p>
-    <p id="sumAges"></p>
-  </div>
+
   `;
   }
   if (variable === "Example") {

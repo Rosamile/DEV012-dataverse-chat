@@ -79,14 +79,14 @@ h2 {
 h4 {
   font-family: "Passero One", sans-serif !important;
 }
-.statistics {
+.stadistics {
   display: inline-flex;
   padding: 0.5rem 1rem;
   width: 100%;
   justify-content: space-evenly;
 }
 
-.statistics p {
+.stadistics p {
   background-color: #ebebeb;
   color: #333333;
   padding: 1rem 4rem;
@@ -94,7 +94,7 @@ h4 {
   font-size: larger;
   border-radius: 10px 0px;
 }
-.statistics p:hover {
+.stadistics p:hover {
   background-color: #3c0808;
   color: white;
 }
@@ -215,7 +215,7 @@ a {
     height: 2rem;
     margin-right: 4rem;
   }
-  .statistics {
+  .stadistics {
     padding: 1rem;
   }
   .containerFilter {
