@@ -18,48 +18,44 @@ import {
 export const home = () => {
   let valueSelectSpecies = "";
   let valueSelectAffiliation = "";
-
   let resultDataFilteredBySpecies = "";
   let resultDataFilteredByAffiliation = "";
+
   const homeView = document.createElement("div");
   homeView.className = "viewcomponents";
   const cardView = document.createElement("section");
   cardView.className = "cardsBox";
-
   const headerComponent = Header("home");
   homeView.innerHTML = headerComponent;
-
   const statsComponent = stats();
-
   const filterOrderComponent = filterOrder();
-
   const cardsComponent = renderCards(data);
-
   const footerComponent = Footer();
+
+  //primero el appenchild agrega y despues se escucha
+  homeView.appendChild(statsComponent);
   homeView.appendChild(filterOrderComponent);
   cardView.appendChild(cardsComponent);
-  homeView.appendChild(statsComponent);
-
   homeView.appendChild(cardView);
   homeView.appendChild(footerComponent);
 
   const statsResult = homeView.querySelector("#stats");
   const ageSumResult = homeView.querySelector("#sumAges");
-  console.log(statsResult);
-  const dataFilter = data; // Considera si realmente necesitas esto o si puedes filtrar directamente sobre "data"
-
   const filterSpecies = homeView.querySelector("#filterSpecies");
-  console.log(filterSpecies);
+  const filterAffiliation = homeView.querySelector("#filteraffiliation");
+  const selectSort = homeView.querySelector("#sortBy");
+  const buttonClear = homeView.querySelector("#clearFilter");
+
+  statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
+  ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
 
   filterSpecies.addEventListener("change", (event) => {
     const value = event.target.value;
     valueSelectSpecies = value;
-    console.log("hi");
-    const dataFiltrada = filterBySpecies(dataFilter, "speciesCharacter", value);
+    const dataFiltrada = filterBySpecies(data, "speciesCharacter", value);
     const cardsComponent = renderCards(dataFiltrada);
     cardView.innerHTML = "";
     cardView.appendChild(cardsComponent);
-    console.log(dataFiltrada);
     resultDataFilteredBySpecies = dataFiltrada;
     statsResult.innerHTML =
       "Resultado de tu selección: " + computeStats(dataFiltrada);
@@ -67,21 +63,17 @@ export const home = () => {
       "Sumatoria de edades: " + ageSumatory(dataFiltrada);
   });
 
-  const filterAffiliation = homeView.querySelector("#filteraffiliation");
-
   filterAffiliation.addEventListener("change", (event) => {
     const value = event.target.value;
     valueSelectAffiliation = value;
     const dataFiltrada = filterByAffiliation(
-      dataFilter,
+      data,
       "affiliationCharacter",
       value
     );
-
     const cardsComponent = renderCards(dataFiltrada);
     cardView.innerHTML = "";
     cardView.appendChild(cardsComponent);
-    console.log(dataFiltrada);
     resultDataFilteredByAffiliation = dataFiltrada;
     statsResult.innerHTML =
       "Resultado de tu selección: " + computeStats(dataFiltrada);
@@ -89,23 +81,18 @@ export const home = () => {
       "Sumatoria de edades: " + ageSumatory(dataFiltrada);
   });
 
-  const selectSort = homeView.querySelector("#sortBy");
-
   selectSort.addEventListener("change", (event) => {
     const clearedData = clearData([
       ...resultDataFilteredBySpecies,
       ...resultDataFilteredByAffiliation,
     ]);
-
     const sortBy = event.target.value;
-
     let sortedData = [];
     if (resultDataFilteredBySpecies || resultDataFilteredByAffiliation) {
       sortedData = sortData(clearedData, sortBy);
     } else {
       sortedData = sortData(data, sortBy);
     }
-    console.log(sortData);
     const cardsComponent = renderCards(sortedData);
     cardView.innerHTML = "";
     cardView.appendChild(cardsComponent);
@@ -113,8 +100,7 @@ export const home = () => {
       "Resultado de tu selección: " + computeStats(clearedData);
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(clearedData);
   });
-  // homeView.innerHTML += buttonClear;
-  const buttonClear = homeView.querySelector("#clearFilter");
+
   buttonClear.addEventListener("click", (event) => {
     const cardsComponent = renderCards(data);
     cardView.innerHTML = "";
