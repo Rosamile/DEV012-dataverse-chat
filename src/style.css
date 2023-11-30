@@ -95,11 +95,10 @@ h4 {
   border-radius: 10px 0px;
 }
 .stadistics p:hover {
-  background-color: #3c0808;
+  background-color: #640808;
   color: white;
 }
 .containerModal {
-  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -107,12 +106,12 @@ h4 {
 }
 .containerFilter label {
   background-color: #d7d700;
-  padding: 20px 0 20px 20px;
+  padding: 14px 0 14px 20px;
   border-radius: 10px 0 0 0;
 }
 .containerFilter select {
   background-color: #d7d700;
-  padding: 19px 19px 19px 5px;
+  padding: 13px 19px 13px 5px;
   border: none;
   outline: none;
   border-radius: 0 0 10px 0;
@@ -157,13 +156,9 @@ h4 {
   justify-content: space-evenly;
   padding: 0;
   gap: 1rem;
+  color: #333333;
 }
-.cardsBox .factsCard {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  line-height: 23px;
-}
+
 .cards {
   background-color: #ebebebb3;
   border-radius: 50px 0;
@@ -174,22 +169,45 @@ h4 {
   align-items: center;
   flex-direction: column;
   padding: 1rem 2rem 2rem 2rem;
+  cursor: pointer;
 }
 .cards img {
   width: 15rem;
   height: 15rem;
-  border: 2px solid #3c0808;
+  border: 2px solid #640808;
   padding: 4px;
   border-radius: 50%;
   margin: 1rem;
 }
+.cards div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
 dt {
   padding-right: 5px;
+}
+dd {
+  font-weight: lighter;
 }
 span {
   display: flex;
   flex-direction: row;
   letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.cards button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  color: #333333;
+}
+.cards button:hover {
+  background-color: #640808;
+  color: #ebebeb;
 }
 footer {
   display: flex;
@@ -202,7 +220,34 @@ a {
   padding-left: 1rem;
 }
 
-#imgmodal {
+.factsCard {
+  display: flex;
+
+  line-height: 30px;
+  background-color: #ebebebb3;
+  border-radius: 50px 0;
+  max-width: 100%;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
+.factsCard img {
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid #640808;
+  padding: 4px;
+  border-radius: 50%;
+}
+.nameFact {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.factsCard div:nth-child(2) {
+  padding-left: 3rem;
+}
+
+/*#imgmodal {
   border: none;
     background-color:transparent;
     background-position:center;
@@ -287,8 +332,7 @@ a {
 .error h2 {
 color: #d9d9d9;
 font-size: xx-large;
-}
-
+}*/
 
 @media only screen and (max-width: 1180px) and (min-width: 600px) {
   h1 {
@@ -320,7 +364,7 @@ font-size: xx-large;
     pointer-events: none;
   }
   .containerModal {
-    background-color: #3c0808;
+    background-color: #640808;
     position: absolute;
     top: 0;
     right: 0;
@@ -398,4 +442,3 @@ font-size: xx-large;
     padding-top: 1rem;
   }
 }
-
