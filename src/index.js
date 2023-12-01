@@ -6,11 +6,13 @@ import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { home } from "../views/home.js";
 import { Error404 } from "../views/error.js";
 import { infoCharacters } from "../views/infoCharacters.js";
+import { chatindividual } from "../views/chatIndividual.js";
 
 const routes = {
-  "/error": Error404,
   "/": home,
   "/facts": infoCharacters,
+  "/chatindi": chatindividual,
+  "/error": Error404,
 };
 
 const viewContainer = document.getElementById("root");

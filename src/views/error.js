@@ -1,11 +1,15 @@
 export const Error404 = () => {
-  const view = `
-    <div class = "error">
-    <h2>Error 404</h2>
-    </div>
-    `;
-  const errorView = document.createElement("div");
-  errorView.innerHTML = view;
-  return errorView;
-};
+  const sectionError = document.createElement("section");
+  sectionError.classList.add("containerError");
+  sectionError.innerHTML = `
+<div class="errorBox">
+  <div class="notFound">
+    <h1>404</h1>
+    <h2>Galaxia no encontrada</h2>
+  </div>
+  <a href="/">Volver</a>
+</div>
+`;
 
+  return sectionError;
+};
