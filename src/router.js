@@ -41,7 +41,7 @@ export const renderView = (pathname, props = {}) => {
 //Encontrar la vista correcta para el pathname minuto 21:18
 export const navigateTo = (pathname, props = {}) => {
   //actualizar la vista con pushState
-  const URLvisited = window.location.hostname + pathname;
+  const URLvisited = window.location.origin + pathname;
   history.pushState({}, "", URLvisited);
   //renderizar la vista con el pathname y propiedades
   renderView(pathname, props);
