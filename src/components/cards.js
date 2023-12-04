@@ -9,7 +9,6 @@ list.classList.add("cards");
 list.setAttribute("id", element.id);
 list.innerHTML = `
 
-
 <img id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
 <span itemprop="name">${element.name}</span>
 <div>

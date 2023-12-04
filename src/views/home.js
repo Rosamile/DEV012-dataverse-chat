@@ -14,6 +14,7 @@ import {
   computeStats,
   ageSumatory,
 } from "../lib/dataFuntion.js";
+import { apiKeyButton } from "../components/buttonApiKey.js";
 
 export const home = () => {
   let valueSelectSpecies = "";
@@ -31,13 +32,16 @@ export const home = () => {
   const filterOrderComponent = filterOrder();
   const cardsComponent = renderCards(data);
   const footerComponent = Footer();
+  const apiKeyButtonComponent = apiKeyButton();
 
   //primero el appenchild agrega y despues se escucha
   homeView.appendChild(statsComponent);
   homeView.appendChild(filterOrderComponent);
+  homeView.appendChild (apiKeyButtonComponent);
   cardView.appendChild(cardsComponent);
   homeView.appendChild(cardView);
   homeView.appendChild(footerComponent);
+
 
   const statsResult = homeView.querySelector("#stats");
   const ageSumResult = homeView.querySelector("#sumAges");
@@ -45,6 +49,7 @@ export const home = () => {
   const filterAffiliation = homeView.querySelector("#filteraffiliation");
   const selectSort = homeView.querySelector("#sortBy");
   const buttonClear = homeView.querySelector("#clearFilter");
+  const buttonOpenApiKey = homeView.querySelector("#buttonApiKey");
 
   statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
   ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
@@ -113,6 +118,7 @@ export const home = () => {
     statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
   });
+
 
   return homeView;
 };
