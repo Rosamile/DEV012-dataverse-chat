@@ -15,10 +15,14 @@ export const modalChat = () => {
      <button id= "openGroupChat" class="modal_GroupChat">Group Chat</button>
    </div>
 `;
-const openGroupChat = modalChats.querySelector("#openGroupChat");
-openGroupChat.addEventListener("click", (event)=>{
-  navigateTo("/panel"); 
-});
+  const openGroupChat = modalChats.querySelector("#openGroupChat");
+  const password = modalChats.querySelector(".modal_inputapikey");
+  openGroupChat.addEventListener("click", (event) => {
+    if (password.value === "") {
+      event.preventDefault();//hace que el alert no se redireccuione
+      return alert("hola!");
+    }
+  });
 
-  return modalChats
+  return modalChats;
 };
