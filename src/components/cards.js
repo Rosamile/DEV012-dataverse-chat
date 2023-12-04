@@ -9,7 +9,6 @@ export const renderCards = (data) => {
     list.setAttribute("id", element.id);
     list.innerHTML = `
 
-
 <img class = "imgCards" id="imgCards${element.id}" src="${element.imageUrl}" alt="${element.id}">
 <span itemprop="name">${element.name}</span>
 <div>

@@ -8,11 +8,17 @@ import { Error404 } from "../views/error.js";
 import { infoCharacters } from "../views/infoCharacters.js";
 import { chatindividual } from "../views/chatIndividual.js";
 
+import { apiKey } from "./views/apiKey.js";
+import { chatG } from "./components/chaGroup.js";
+
+
 const routes = {
   "/": home,
   "/facts": infoCharacters,
   "/chatindi": chatindividual,
   "/error": Error404,
+  "/apikey": apiKey,
+  "/panel": chatG,
 };
 
 const viewContainer = document.getElementById("root");
