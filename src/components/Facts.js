@@ -1,10 +1,10 @@
 export const renderFacts = (data) => {
-const sectionFacts = document.createElement("section");
-sectionFacts.classList.add("factsCard");
-sectionFacts.innerHTML = `
+  const sectionFacts = document.createElement("section");
+  sectionFacts.classList.add("factsCard");
+  sectionFacts.innerHTML = `
 
 <div>
-  <img class="imgFact" id="image${data.id}" src="${data.imageUrl}" alt="${data.id}">
+  <img class="imgFact" id="imgFacts${data.id}" src="${data.imageUrl}" alt="${data.id}">
   <span class="nameFact" itemprop="name">${data.name}</span>
 </div>
 <div>
@@ -31,6 +31,5 @@ sectionFacts.innerHTML = `
 </div>
 `;
 
-
-return sectionFacts;
+  return sectionFacts;
 };
