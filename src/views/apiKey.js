@@ -1,22 +1,23 @@
-import { Header } from "../components/header.js"
-import { Footer } from "../components/footer.js"
-import { modalChat } from "../components/modal.js"
+import { Header } from "../components/header.js";
+import { Footer } from "../components/Footer.js";
+import { modalChat } from "../components/modal.js";
 
-export const apiKey = () =>{
+export const apiKey = () => {
+  // Crear el elemento apiKeyView
+  const apiKeyView = document.createElement("section");
+  apiKeyView.className = "apiKeyView";
 
- // Crear el elemento apiKeyView
-const apiKeyView = document.createElement('section');
-apiKeyView.classList.add ('apiKeyViewComponents');
+  // Obtener los componentes
+  const apiKeyComponent = modalChat();
 
-     // Obtener los componentes
-const contenedorApiKeyComponent = modalChat();
-const footerComponent = Footer();
-const headerComponent = Header();
+  const headerComponent = Header("apiKey");
+  apiKeyView.innerHTML = headerComponent;
+  const footerComponent = Footer();
 
-// Agregar los componentes como hijos de apiKeyView
+  // Agregar los componentes como hijos de apiKeyView
 
-apiKeyView.appendChild(footerComponent);
-apiKeyView.appendChild(contenedorApiKeyComponent);
+  apiKeyView.appendChild(apiKeyComponent);
+  apiKeyView.appendChild(footerComponent);
 
-return apiKeyView;
+  return apiKeyView;
 };

@@ -16,6 +16,5 @@ export const infoCharacters = () => {
   factsViewView.appendChild(renderFactsComponent);
   factsViewView.appendChild(footerComponent);
 
-  console.log(profile);
   return factsViewView;
 };

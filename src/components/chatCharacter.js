@@ -1,7 +1,7 @@
 export const chatI = (data) => {
-const sectionchatI = document.createElement("section");
-sectionchatI.classList.add("containerChati");
-sectionchatI.innerHTML = `
+  const sectionchatI = document.createElement("section");
+  sectionchatI.classList.add("containerChati");
+  sectionchatI.innerHTML = `
 
 <div class="profiletCtn">
     <img class="imgProfileChat" id="imgProfileChatI${data.id}" src="${data.imageUrl}" alt="${data.id}">
@@ -13,15 +13,15 @@ sectionchatI.innerHTML = `
         <span id="textIACharacter"></span>
     </div>
     <div class="userCtn">
-        <i class="fa-solid fa-jedi"></i>
         <span id="textUser"></span>
+        <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
     </div>
-    <div class="textareCtn">
+    <div class="textAreaCtn">
         <textarea placeholder="Comienza a chatear..." name="writeHere" id="writeHere" cols="30" rows="10"></textarea>
         <i class="fa-solid fa-meteor"></i>
     </div>
 </div>
 
 `;
-return sectionchatI;
+  return sectionchatI;
 };

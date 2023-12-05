@@ -1,26 +1,21 @@
-import { navigateTo } from "../router.js";
-
 export const modalChat = () => {
   const modalChats = document.createElement("section");
-  modalChats.classList.add("modalapikey");
+  modalChats.classList.add("modalApikey");
   modalChats.innerHTML = `
    <div class="modal_containerapikey">
-     <h2 class="modal_titleapikey">¡Chatea con nosotros!</h2>
      <p class="modal_paragraphapikey">Registra a continuación la contraseña proporcionada</p>
      <form class="modal_apikey">
      <input class="modal_inputapikey" placeholder="Ingresa contraseña" type="text"></input>
      </form>
-     <br>
-     <button id="cerrarModal" class="modal_closeapikey">Cerrar</button>
-     <button id= "openGroupChat" class="modal_GroupChat">Group Chat</button>
+      <button id= "openGroupChat" class="modal_GroupChat">Chat Grupal</button>
    </div>
 `;
   const openGroupChat = modalChats.querySelector("#openGroupChat");
   const password = modalChats.querySelector(".modal_inputapikey");
   openGroupChat.addEventListener("click", (event) => {
     if (password.value === "") {
-      event.preventDefault();//hace que el alert no se redireccuione
-      return alert("hola!");
+      event.preventDefault(); //hace que el alert no se redireccuione
+      return alert("Escribe una clave valida.");
     }
   });
 
