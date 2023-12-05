@@ -448,7 +448,19 @@ a {
 .modalApikey button:hover {
   background-color: #640808;
 }
-
+.btnCtnApiKey button {
+  background-color: #d7d700;
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.69);
+}
+.btnCtnApiKey .fa-regular {
+  background-color: transparent;
+}
 @media only screen and (max-width: 1180px) and (min-width: 600px) {
   h1 {
     letter-spacing: 6px;
