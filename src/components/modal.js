@@ -15,9 +15,10 @@ export const modalChat = () => {
   openGroupChat.addEventListener("click", (event) => {
     if (password.value === "") {
       event.preventDefault(); //hace que el alert no se redireccuione
-      return alert("Escribe una clave valida.");
+      alert("hola!");
+    } else {
+      navigateTo("/panel");
     }
   });
-
   return modalChats;
 };
