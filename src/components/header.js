@@ -34,6 +34,18 @@ export const Header = (variable) => {
 
 `;
   }
+  if (variable === "groupChat") {
+    view = `
+<header>
+  <a class="titlteSW" href="/">STAR WARS Chat</a>
+  <div class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
+</header>
+<main>
+  <h2>Chatea con nosotros!!</h2>
+</main>
+
+`;
+  }
   if (variable === "apiKey") {
     view = `
 <header>

@@ -13,11 +13,12 @@ export const modalChat = () => {
   const openGroupChat = modalChats.querySelector("#openGroupChat");
   const password = modalChats.querySelector(".modal_inputapikey");
   openGroupChat.addEventListener("click", (event) => {
+    console.log("click");
     if (password.value === "") {
       event.preventDefault(); //hace que el alert no se redireccuione
       alert("hola!");
     } else {
-      navigateTo("/panel");
+      window.location.href = "/panel";
     }
   });
   return modalChats;

@@ -319,12 +319,14 @@ a {
 .errorBox a:hover {
   color: #8400ff;
 }
-/*chat individual*/
-.containerChati {
+
+.containerChati,
+.containerChatG {
   display: flex;
   margin: 1rem;
 }
-.profiletCtn {
+.profiletCtn,
+.profileGroup {
   background-color: #ebebebb3;
   border-radius: 20px 0 20px 0;
   padding: 1rem;
@@ -338,11 +340,13 @@ a {
   padding: 4px;
   border-radius: 50%;
 }
+
 .chatCtn {
   border-radius: 20px 0 20px 0;
   background-color: #111111;
   height: 43vh;
   width: 75%;
+  overflow-y: scroll;
 }
 .characterCtn {
   display: flex;
@@ -362,56 +366,25 @@ a {
   width: 84vh;
   height: 36px;
 }
-
-
-
-
-
-/*#imgmodal {
-  border: none;
-    background-color:transparent;
-    background-position:center;
-    background-repeat:no-repeat;
-    position: fixed;
-    width:10px;
-    height:auto;
-    bottom: 10px;
-    margin-left: 750px;
-  
-    
-  }
-
-  #imgmodal {
-      margin: 0;
-      border-radius:100%;
-      padding: 0px;
-      transition: background-color 0.3s;
-    }
-
-    .hero_ctaapikey:hover {
-    background: linear-gradient(90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(249, 99, 86, 1) 0%,
-      rgba(168, 205, 226, 1) 48%,
-      rgba(149, 236, 62, 1) 100%)
-    }
-.modalapikey {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #111111bd;
+.userCtn {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: end;
   padding: 10px;
   justify-content: flex-end;
+}
+.userCtn div {
+  display: flex;
+  margin-bottom: 0.5rem;
 }
 .userCtn span {
   border-radius: 20px;
   background-color: #0039b554;
-  width: 84vh;
-  height: 36px;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  color: #cacaca;
+  font-size: medium;
 }
 .userCtn .icon-user {
   width: 3rem;
@@ -439,6 +412,7 @@ a {
   background: transparent;
   backdrop-filter: blur(10px);
 }
+
 
 .modalApikey {
   display: flex;
@@ -500,6 +474,14 @@ a {
 .btnCtnApiKey .fa-regular {
   background-color: transparent;
 }
+/*chat grupal*/
+#imageG {
+  height: 18rem;
+  width: auto;
+  border: 2px solid #640808;
+  padding: 4px;
+}
+
 @media only screen and (max-width: 1180px) and (min-width: 600px) {
   h1 {
     letter-spacing: 6px;
