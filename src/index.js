@@ -3,14 +3,12 @@
 //import solo viewa
 
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
-import { home } from "../views/home.js";
-import { Error404 } from "../views/error.js";
-import { infoCharacters } from "../views/infoCharacters.js";
-import { chatindividual } from "../views/chatIndividual.js";
-
+import { home } from "./views/home.js";
+import { Error404 } from "./views/error.js";
+import { infoCharacters } from "./views/infoCharacters.js";
+import { chatindividual } from "./views/chatIndividual.js";
 import { apiKey } from "./views/apiKey.js";
-import { chatG } from "./components/chaGroup.js";
-
+import { chatGroup } from "./views/chatGrupal.js";
 
 const routes = {
   "/": home,
@@ -18,7 +16,7 @@ const routes = {
   "/chatindi": chatindividual,
   "/error": Error404,
   "/apikey": apiKey,
-  "/panel": chatG,
+  "/panel": chatGroup,
 };
 
 const viewContainer = document.getElementById("root");

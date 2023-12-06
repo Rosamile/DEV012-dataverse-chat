@@ -1,38 +1,37 @@
-import data from "../data/data.js"
+export const chatG = () => {
+  const sectionchatG = document.createElement("section");
+  sectionchatG.classList.add("containerChatG");
+  sectionchatG.innerHTML = `
 
-export const chatG = () =>{
-    const sectionchatG = document.createElement("section");
-    sectionchatG.classList.add("groupChat");
-    for (let i=0; i<data.length;i++){
-      let element = data[i];
-        sectionchatG.innerHTML = `
-          <div class="participantesChatGroup">
-            <img id="image${element.id}" src="${element.imageUrl}" alt="${element.id}">
-            <span itemprop="name">${element.name}</span>
-            <div>
-              <i class="fa-solid fa-jedi"></i>
-              <span id="textUser">sssssoy el texto del usuario</span>
-            </div>
-          <div>
-            <textarea placeholder="Comienza a chatear..." name="writeHere" id="writeHere" cols="30" rows="10"></textarea>
-            <i class="fa-solid fa-meteor"></i>
-          </div>
-          <div id="buttonEnviarChatG">Enviar</div>
-          </div>
-    `;
+<div class="profileGroup">
+  <img id="imageG" src="https://i.pinimg.com/564x/94/da/07/94da07fde43b8c80ec6b7ac2454b7e84.jpg" alt="starwars">
+</div>
+<div class="chatCtn">
+  <div class="userCtn"></div>
+  <div class="textAreaCtn">
+    <textarea placeholder="Comienza a chatear..." name="writeHere" id="writeHere" cols="30" rows="10"></textarea>
+    <div id="buttonEnviarChatG">
+    <button>
+    <i class="fa-solid fa-meteor icon-send" ></i></button></div>
+  </div>
+  `;
+
+  const btnChatGrupal = sectionchatG.querySelector("#buttonEnviarChatG");
+  const textAreaChat = sectionchatG.querySelector("#writeHere");
+  let viewChatGrupal = sectionchatG.querySelector(".userCtn");
+
+  btnChatGrupal.addEventListener("click", (event) => {
+    const newMsg = textAreaChat.value;
+    const questionUser = `
+  <div>
+    <span id="textUser">${newMsg}</span>
+    <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
+  </div>
+
+  `;
+    viewChatGrupal.innerHTML += questionUser;
+    textAreaChat.value = "";
+  });
+
+  return sectionchatG;
 };
-
-const enviarChatGrupal = sectionchatG.querySelector("#buttonEnviarChatG");
-const textAreaChat = sectionchatG.querySelector("#writeHere");
-let vistaChatGrupal = sectionchatG.querySelector("#textUser");
-
-enviarChatGrupal.addEventListener("click", (event)=>{
-  const nuevoMensaje = textAreaChat.value;
-vistaChatGrupal.innerHTML += nuevoMensaje + "<br>";
-textAreaChat.value="";
-
-});
-
-    return sectionchatG
-    };
-
