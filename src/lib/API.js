@@ -1,6 +1,4 @@
-import { chatG } from "../components/chaGroup.js";
 
-const API_KEY ='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';
 const prompt = sectionchatG.querySelector("#writeHere");
 
 async function getCompletion (prompt){
