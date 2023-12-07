@@ -1,7 +1,6 @@
 
-
 function getCompletion(prompt, name) {
-  const apiKEY = localStorage.getItem("password") || API_KEY;
+  const apiKEY = localStorage.getItem("APIKEY");
 
   const resIA = fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
@@ -28,4 +27,5 @@ function getCompletion(prompt, name) {
   return resIA;
 }
 
+console.log(localStorage)
 export default getCompletion;

@@ -1,4 +1,3 @@
-import { navigateTo } from "../router.js";
 
 export const apiKeyButton = () => {
   const btnCtnApiKey = document.createElement("div");
