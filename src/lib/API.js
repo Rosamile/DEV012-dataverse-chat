@@ -1,26 +1,31 @@
 
- 
- function getCompletion(){
-  fetch("https://api.openai.com/v1/chat/completions",{
+
+function getCompletion(prompt, name) {
+  const apiKEY = localStorage.getItem("password") || API_KEY;
+
+  const resIA = fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("password"),
+      Authorization: "Bearer " + apiKEY,
     },
     body: JSON.stringify({
-      model: "gpt-3.5-turbo" ,
+      temperature: 0,
+      max_tokens: 60,
+      model: "gpt-3.5-turbo",
       messages: [
-      {
-        role: "user",
-        content:"Hola soy el rey",
-      },
-    ],
-  }),
-  }).then (res=>res.json());
+        {
+          role: "user",
+          content: `Tu nombre es ${name}`,
+        },
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+    }),
+  }).then((res) => res.json());
+  return resIA;
 }
 
-/*button.addEventListener("click", async () => {
-  if (!prompt.value) return;
-  const response = await getCompletion(prompt.value);
-  output.innerHTML = response.choice[0].messages.content;
-});*/
+export default getCompletion;

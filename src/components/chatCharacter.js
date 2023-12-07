@@ -1,3 +1,4 @@
+import getCompletion from "../lib/API.js";
 export const chatI = (data) => {
   const sectionchatI = document.createElement("section");
   sectionchatI.classList.add("containerChati");
@@ -25,6 +26,17 @@ export const chatI = (data) => {
 
   btnChatI.addEventListener("click", (event) => {
     const newMsg = textAreaChat.value;
+    getCompletion(newMsg, data.name).then((res) => {
+      console.log(res);
+
+      viewChatI.innerHTML += `
+  <div>
+    <span id="textUser">${res.choices[0].message.content}</span>
+    <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
+  </div>
+
+  `;
+    });
     const questionUser = `
 <div>
   <span id="textUser">${newMsg}</span>
