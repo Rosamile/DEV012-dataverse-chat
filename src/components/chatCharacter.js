@@ -1,7 +1,12 @@
-import getCompletion from "../lib/API.js";
+import getCompletion, { upDateChat } from "../lib/API.js";
+import { clearHistoryChat } from "../lib/API.js";
+
+
 export const chatI = (data) => {
+  clearHistoryChat();
   let loading;
   const sectionchatI = document.createElement("section");
+  const apiKEY = localStorage.getItem("APIKEY");
   sectionchatI.classList.add("containerChati");
   sectionchatI.innerHTML = `
 
@@ -27,25 +32,20 @@ export const chatI = (data) => {
   btnChatI.addEventListener("click", (event) => {
     loading=true;
     const newMsg = textAreaChat.value;
-    getCompletion(newMsg, data.name).then((res) => {
-      console.log(res);
+   getCompletion(newMsg, data.name, apiKEY).then((res) => {
       loading = false;
-
+      upDateChat(res.choices[0].message.content);
       viewChatI.innerHTML += `
-  <div>
-    <span id="textUser">${res.choices[0].message.content}</span>
-    <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
-  </div>
-  `;
-  
+       <div>
+         <span id="textUser">${res.choices[0].message.content}</span>
+           <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
+       </div> `;
     });
     const questionUser = `
-<div>
-  <span id="textUser">${newMsg}</span>
-  <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
-</div>
-
-`;
+      <div>
+        <span id="textUser">${newMsg}</span>
+          <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
+      </div>`;
     viewChatI.innerHTML += questionUser;
     textAreaChat.value = "";
   });

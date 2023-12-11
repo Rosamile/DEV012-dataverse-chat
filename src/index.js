@@ -24,6 +24,8 @@ setRoutes(routes);
 setRootElement(viewContainer);
 document.addEventListener("DOMContentLoaded", (event) => {
   onURLChange(event.target.location.pathname);
+  console.log("g")
+//localStorage.clear();
 });
 
 document.addEventListener("popstate", (event) => {
