@@ -19,7 +19,7 @@ console.log(historyChat);
   if(historyChat.length===0){
       historyChat.push({
       role: "system",
-      content: `Eres ${name} un personaje de star wars, responde las preguntas acerca de tú vida`, 
+      content: `Eres un personaje de star wars, concretamente ${name} responde todas las preguntas asumiendo este rol`, 
   });
 
   } else {
