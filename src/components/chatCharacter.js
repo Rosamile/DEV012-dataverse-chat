@@ -34,7 +34,8 @@ export const chatI = (data) => {
     const newMsg = textAreaChat.value;
    getCompletion(newMsg, data.name, apiKEY).then((res) => {
       loading = false;
-      upDateChat(res.choices[0].message.content);
+      console.log(res)
+      upDateChat(res.choices[0].message);
       viewChatI.innerHTML += `
        <div>
          <span id="textUser">${res.choices[0].message.content}</span>
