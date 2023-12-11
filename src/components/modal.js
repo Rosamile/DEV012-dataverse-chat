@@ -7,21 +7,23 @@ export const modalChat = () => {
      <form class="modal_apikey">
      <input class="modal_inputapikey" placeholder="Ingresa contraseña" type="text"></input>
      </form>
-      <button id= "openGroupChat" class="modal_GroupChat">Chat Grupal</button>
+      <button id= "savePassword" class="savePassword">Guardar</button>
    </div>
 `;
-  const openGroupChat = modalChats.querySelector("#openGroupChat");
+  const savePassword = modalChats.querySelector("#savePassword");
   const password = modalChats.querySelector(".modal_inputapikey");
-  openGroupChat.addEventListener("click", (event) => {
+
+  savePassword.addEventListener("click", (event) => {
     if (password.value === "") {
-      event.preventDefault(); //hace que el alert no se redireccuione
-      alert("hola!");
+      event.preventDefault(); //hace que el alert no se redireccione
+      alert("Debes ingresar un Apikey valida");
     } else {
      localStorage.setItem("APIKEY", password.value);
-  
     }
-console.log(localStorage.getItem("APIKEY"));
+      if(password.value!=""){ password.value = "*".repeat(password.value.length);
+      }
+       });
+  
 
-  });
   return modalChats;
 };
