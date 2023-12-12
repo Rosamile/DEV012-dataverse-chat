@@ -1,6 +1,6 @@
-import getCompletion from "./../lib/API.js";
+import getCompletionChatGroup from "./../lib/APIChatGroup.js";
 import data from "../data/data.js";
-import { clearHistoryChatGrupal } from "./../lib/API.js";
+import { clearHistoryChatGrupal } from "./../lib/APIChatGroup.js";
 
 
 
@@ -29,7 +29,7 @@ export const chatG = () => {
   btnChatGrupal.addEventListener("click", () => {
     const newMsg = textAreaChat.value;
     for(const element of data) {
-        getCompletion(newMsg, element.name, apiKEY).then((res) => {
+        getCompletionChatGroup(newMsg, element.name, apiKEY).then((res) => {
       viewChatGrupal.innerHTML += `
         <div>
           <span id="textUser">${res.choices[0].message.content}</span>
