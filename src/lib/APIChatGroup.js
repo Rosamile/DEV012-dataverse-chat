@@ -1,30 +1,30 @@
+export let historyChatGrupal = [];
 
-export let historyChat =[];
-export let historyChatGrupal =[];
-
-
-export const clearHistoryChatGrupal =()=>{
-  historyChatGrupal=[];
+export const clearHistoryChatGrupal = () => {
+  historyChatGrupal = [];
 };
 
-export const upDateChat =(message)=>{
-  historyChat.push(message)
+export const upDateChat = (message) => {
+  historyChatGrupal.push(message);
 };
 
 function getCompletionChatGroup(userText, name, APIKEY) {
-console.log(historyChat);
-  if(historyChat.length===0){
-      historyChat.push({
+  console.log(name);
+  if (historyChatGrupal.length === 0) {
+    const nameFormat = name.toString();
+    // for (const element of name) {
+    historyChatGrupal.push({
       role: "system",
-      content: `Eres un personaje de star wars, concretamente ${name} responde todas las preguntas asumiendo este rol`, 
-  });
-
+      content: `Eres un personaje de star wars, concretamente ${name} responde todas las preguntas asumiendo este rol`,
+    });
+    //  }
   } else {
-    historyChat.push({
+    historyChatGrupal.push({
       role: "user",
       content: userText,
     });
-  };
+  }
+
   const resIA = fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -35,10 +35,11 @@ console.log(historyChat);
       temperature: 0,
       max_tokens: 60,
       model: "gpt-3.5-turbo",
-      messages:historyChat,
+      messages: historyChatGrupal,
     }),
-  }).then((res) =>res.json())
-  .catch((error )=>console.error("Apikey incorrecta", error));
+  })
+    .then((res) => res.json())
+    .catch((error) => console.error("Apikey incorrecta", error));
   return resIA;
-};
+}
 export default getCompletionChatGroup;
