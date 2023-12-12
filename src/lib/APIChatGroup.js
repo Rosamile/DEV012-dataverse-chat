@@ -1,13 +1,17 @@
-export let historyChat =[];
 
-export const clearHistoryChat= ()=>{
-historyChat=[];
+export let historyChat =[];
+export let historyChatGrupal =[];
+
+
+export const clearHistoryChatGrupal =()=>{
+  historyChatGrupal=[];
 };
+
 export const upDateChat =(message)=>{
   historyChat.push(message)
 };
 
-function getCompletion(userText, name, APIKEY) {
+function getCompletionChatGroup(userText, name, APIKEY) {
 console.log(historyChat);
   if(historyChat.length===0){
       historyChat.push({
@@ -37,5 +41,4 @@ console.log(historyChat);
   .catch((error )=>console.error("Apikey incorrecta", error));
   return resIA;
 };
-export default getCompletion;
-
+export default getCompletionChatGroup;
