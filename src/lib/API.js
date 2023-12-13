@@ -8,7 +8,6 @@ export const upDateChat =(message)=>{
 };
 
 function getCompletion(userText, name, APIKEY) {
-console.log(historyChat);
   if(historyChat.length===0){
       historyChat.push({
       role: "system",

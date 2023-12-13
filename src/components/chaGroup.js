@@ -1,9 +1,9 @@
 import getCompletionChatGroup from "./../lib/APIChatGroup.js";
 import data from "../data/data.js";
-import { clearHistoryChatGrupal } from "./../lib/APIChatGroup.js";
+
 
 export const chatG = () => {
-  clearHistoryChatGrupal();
+
   const sectionchatG = document.createElement("section");
   const apiKEY = localStorage.getItem("APIKEY");
   sectionchatG.classList.add("containerChatG");
@@ -26,26 +26,18 @@ export const chatG = () => {
 
   btnChatGrupal.addEventListener("click", () => {
     const newMsg = textAreaChat.value;
-    const promises = data.map((element) => {
-      return getCompletionChatGroup(newMsg, element.name, apiKEY).then(
-        (res) => {
-          return res.choices[0].message.content;
-        }
-      );
-    });
-
-    Promise.all(promises).then((responses) => {
-      console.log(responses);
-      responses.forEach((content) => {
-        viewChatGrupal.innerHTML += `
-      <div>
-        <span id="textUser">${content}</span>
-        <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
-      </div>
-    `;
-      });
-    });
-
+    for (const element of data) {
+      getCompletionChatGroup(newMsg, element.name, apiKEY)
+        .then((res) => {
+          console.log(res)
+          viewChatGrupal.innerHTML += `
+        <div>
+          <span id="textUser">${res.choices[0].message.content}</span>
+            <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
+       </div>
+     `;
+        });
+    };
     //preguntas a enviar
     const questionUser = `
   <div>
