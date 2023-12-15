@@ -15,6 +15,7 @@ import {
   ageSumatory,
 } from "../lib/dataFuntion.js";
 import { apiKeyButton } from "../components/buttonApiKey.js";
+import { chatGruopButton } from "../components/buttonChG.JS";
 
 export const home = () => {
   let valueSelectSpecies = "";
@@ -28,20 +29,24 @@ export const home = () => {
   cardView.className = "cardsBox";
   const headerComponent = Header("home");
   homeView.innerHTML = headerComponent;
+  const chatGandApikeyView = document.createElement("section");
+  chatGandApikeyView.className = "floatButtons";
   const statsComponent = stats();
   const filterOrderComponent = filterOrder();
   const cardsComponent = renderCards(data);
   const footerComponent = Footer();
   const apiKeyButtonComponent = apiKeyButton();
+  const chatGruopButtonComponent = chatGruopButton();
 
   //primero el appenchild agrega y despues se escucha
+  chatGandApikeyView.appendChild(chatGruopButtonComponent);
+  chatGandApikeyView.appendChild(apiKeyButtonComponent);
+  homeView.appendChild(chatGandApikeyView);
   homeView.appendChild(statsComponent);
   homeView.appendChild(filterOrderComponent);
-  homeView.appendChild (apiKeyButtonComponent);
   cardView.appendChild(cardsComponent);
   homeView.appendChild(cardView);
   homeView.appendChild(footerComponent);
-
 
   const statsResult = homeView.querySelector("#stats");
   const ageSumResult = homeView.querySelector("#sumAges");
@@ -118,7 +123,6 @@ export const home = () => {
     statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
   });
-
 
   return homeView;
 };
