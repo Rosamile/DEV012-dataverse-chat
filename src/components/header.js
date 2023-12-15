@@ -18,7 +18,6 @@ export const Header = (variable) => {
     view = `
 <header>
   <a class="titlteSW" href="/">STAR WARS Perfil</a>
-  <div class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
 </header>
 `;
   }
@@ -26,7 +25,6 @@ export const Header = (variable) => {
     view = `
 <header>
   <a class="titlteSW" href="/">STAR WARS Chat</a>
-  <div class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
 </header>
 <main>
   <h2>Chatea con tu personaje favorito</h2>
@@ -38,7 +36,6 @@ export const Header = (variable) => {
     view = `
 <header>
   <a class="titlteSW" href="/">STAR WARS Chat</a>
-  <div class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
 </header>
 <main>
   <h2>Chatea con nosotros!!</h2>
@@ -50,7 +47,6 @@ export const Header = (variable) => {
     view = `
 <header>
   <a class="titlteSW" href="/">STAR WARS</a>
-  <div class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
 </header>
 <main>
   <h2>Chatea con nosotros!</h2>

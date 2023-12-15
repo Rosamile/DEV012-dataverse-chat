@@ -4,7 +4,7 @@ import {
   sortData,
   computeStats,
 } from "../src/dataFunctions.js";
-import { data as fakeData } from "./data.js";
+import { data as fakeData } from "./../data/data.js";
 
 describe("filterBySpecies", () => {
   it("debería filtrar correctamente por una especie, humano", () => {
