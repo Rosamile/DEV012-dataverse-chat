@@ -18,11 +18,11 @@ export const modalChat = () => {
       event.preventDefault(); //hace que el alert no se redireccione
       alert("Debes ingresar un Apikey valida");
     } else {
-     localStorage.setItem("APIKEY", password.value);
+      localStorage.setItem("APIKEY", password.value);
     }
-      if(password.value!=""){ password.value = "*".repeat(password.value.length);
-      }
-       });
+    if(password.value!==""){ password.value = "*".repeat(password.value.length);
+    }
+  });
   
 
   return modalChats;

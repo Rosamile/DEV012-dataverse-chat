@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //localStorage.clear();
 });
 
-document.addEventListener("popstate", (event) => {
+document.addEventListener("popstate", () => {
   onURLChange(window.location);
 });
-
-console.log("hola aqui estoy");

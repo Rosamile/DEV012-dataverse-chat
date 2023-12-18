@@ -1,13 +1,13 @@
 export const renderCards = (data) => {
-const ul = document.createElement("ul");
-ul.classList.add("character");
-data.forEach((element) => {
-const list = document.createElement("li");
-list.setAttribute("itemscope", "");
-list.setAttribute("itemtype", "card");
-list.classList.add("cards");
-list.setAttribute("id", element.id);
-list.innerHTML = `
+  const ul = document.createElement("ul");
+  ul.classList.add("character");
+  data.forEach((element) => {
+    const list = document.createElement("li");
+    list.setAttribute("itemscope", "");
+    list.setAttribute("itemtype", "card");
+    list.classList.add("cards");
+    list.setAttribute("id", element.id);
+    list.innerHTML = `
 <div>
   <img class="imgCards" id="imgCards${element.id}" src="${element.imageUrl}" alt="${element.id}">
   <span itemprop="name">${element.name}</span>
@@ -36,17 +36,17 @@ list.innerHTML = `
 
 `;
 
-const img = list.querySelector(".imgCards");
-img.addEventListener("click", (event) => {
-localStorage.setItem("profile", JSON.stringify(element));
-location.href = `/facts?id=${element.id}`;
-});
-const button = list.querySelector(".bChat");
-button.addEventListener("click", (event) => {
-localStorage.setItem("profileChat", JSON.stringify(element));
-location.href = `/chatindi?id=${element.id}`;
-});
-ul.appendChild(list);
-});
-return ul;
+    const img = list.querySelector(".imgCards");
+    img.addEventListener("click", () => {
+      localStorage.setItem("profile", JSON.stringify(element));
+      location.href = `/facts?id=${element.id}`;
+    });
+    const button = list.querySelector(".bChat");
+    button.addEventListener("click", () => {
+      localStorage.setItem("profileChat", JSON.stringify(element));
+      location.href = `/chatindi?id=${element.id}`;
+    });
+    ul.appendChild(list);
+  });
+  return ul;
 };

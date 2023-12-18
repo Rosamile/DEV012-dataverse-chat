@@ -23,7 +23,7 @@ export const setRoutes = (newRoutesValue) => {
   }
 };
 
-export const renderView = (pathname, props = {}) => {
+export const renderView = (pathname = {}) => {
   //Crear una variable para guardar el valor de root
   const root = rootElement;
   //limpiar el html elemento donde se está agregando

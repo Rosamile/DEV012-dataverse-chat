@@ -29,13 +29,12 @@ export const chatG = () => {
   //botones
   const btnChatGrupal = sectionchatG.querySelector("#buttonEnviarChatG");
   const textAreaChat = sectionchatG.querySelector("#writeHere");
-  let viewChatGrupal = sectionchatG.querySelector(".userCtnG");
+  const viewChatGrupal = sectionchatG.querySelector(".userCtnG");
 
   btnChatGrupal.addEventListener("click", () => {
     const newMsg = textAreaChat.value;
     for (const element of data) {
       getCompletionChatGroup(newMsg, element.name, apiKEY).then((res) => {
-        console.log(res);
         viewChatGrupal.innerHTML += `
 <div>
   <img class="imgProfileChat" id="imageG" src="https://i.pinimg.com/564x/c6/20/1b/c6201b0f2993faf44d5ffba6bb92c245.jpg"
