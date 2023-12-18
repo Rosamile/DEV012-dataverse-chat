@@ -3,8 +3,10 @@ import {
   filterBySpecies,
   sortData,
   computeStats,
+
 } from "../lib/dataFuntion.js";
 import { data as fakeData } from "../data/data.js";
+
 
 describe("filterBySpecies", () => {
   it("debería filtrar correctamente por una especie, humano", () => {
