@@ -54,7 +54,6 @@ export const home = () => {
   const filterAffiliation = homeView.querySelector("#filteraffiliation");
   const selectSort = homeView.querySelector("#sortBy");
   const buttonClear = homeView.querySelector("#clearFilter");
-  const buttonOpenApiKey = homeView.querySelector("#buttonApiKey");
 
   statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
   ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);

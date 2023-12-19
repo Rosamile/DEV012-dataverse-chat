@@ -4,7 +4,7 @@ export const chatGruopButton = () => {
   btnCtnChG.innerHTML = `
 <button><i class="fa-regular fa-comments fa-sm"></i></button>
 `;
-  btnCtnChG.addEventListener("click", (event) => {
+  btnCtnChG.addEventListener("click", () => {
     location.href = `/panel`;
   });
   return btnCtnChG;

@@ -14,7 +14,7 @@ export const chatG = () => {
 <div class="chatCtn">
 
   <div class="chatBox">
-    <div class="userCtnG"></div>
+    <div class="userCtn"></div>
 
   </div>
 
@@ -29,27 +29,31 @@ export const chatG = () => {
   //botones
   const btnChatGrupal = sectionchatG.querySelector("#buttonEnviarChatG");
   const textAreaChat = sectionchatG.querySelector("#writeHere");
-  let viewChatGrupal = sectionchatG.querySelector(".userCtnG");
+  let viewChatGrupal = sectionchatG.querySelector(".userCtn");
 
   btnChatGrupal.addEventListener("click", () => {
     const newMsg = textAreaChat.value;
     for (const element of data) {
       getCompletionChatGroup(newMsg, element.name, apiKEY).then((res) => {
-        console.log(res);
         viewChatGrupal.innerHTML += `
-<div>
-  <img class="imgProfileChat" id="imageG" src="https://i.pinimg.com/564x/c6/20/1b/c6201b0f2993faf44d5ffba6bb92c245.jpg"
-    alt="starwars">
+<div class="userCtn_inner">
+  <img class="imgProfileChat" id="imgChatI"
+    src="https://i.pinimg.com/564x/c6/20/1b/c6201b0f2993faf44d5ffba6bb92c245.jpg" alt="starwars">
   <span id="textIACharacter">${res.choices[0].message.content}</span>
+  <div class="userCtn_spacer"></div>
+
 </div>
 `;
       });
     }
     //preguntas a enviar
     const questionUser = `
-<div>
+<div class="userCtn_inner">
+  <div class="userCtn_spacer"></div>
   <span id="textUser">${newMsg}</span>
   <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
+
+
 </div>
 
 `;
@@ -59,4 +63,3 @@ export const chatG = () => {
 
   return sectionchatG;
 };
-//  <div style="color:red;">${loading ? "cargando" : ""}</div>-->

@@ -4,7 +4,7 @@ export const apiKeyButton = () => {
   btnCtnApiKey.innerHTML = `
 <button><i class="fa-solid fa-key fa-sm"></i></button>
 `;
-  btnCtnApiKey.addEventListener("click", (event) => {
+  btnCtnApiKey.addEventListener("click", () => {
     location.href = `/apikey`;
   });
   return btnCtnApiKey;

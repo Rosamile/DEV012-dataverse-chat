@@ -48,9 +48,6 @@ export const Header = (variable) => {
 <header>
   <a class="titlteSW" href="/">STAR WARS</a>
 </header>
-<main>
-  <h2>Chatea con nosotros!</h2>
-</main>
 `;
   }
 

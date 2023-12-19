@@ -310,7 +310,7 @@ a {
   margin: 0;
 }
 .errorBox a {
-  display: inline-block;
+  display: inline;
   text-transform: uppercase;
   color: #ff005a;
   text-decoration: none;
@@ -325,7 +325,7 @@ a {
 .errorBox a:hover {
   color: #8400ff;
 }
-
+/*chat indi*/
 .containerChati,
 .containerChatG {
   display: flex;
@@ -374,52 +374,57 @@ a {
 }
 
 .chatCtn img {
-  width: 4rem;
-  height: 4rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  border: 3px solid #03b52a;
-  margin-right: 1rem;
+  border: 1px solid #03b52a;
+  margin: 0 1rem 0 0;
 }
-.characterCtn #textIACharacter {
-  border-radius: 20px;
-  background-color: #00b52854;
-  width: 84vh;
-  height: 36px;
-}
+
 .userCtn {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  justify-content: flex-end;
 }
-.userCtn div {
+.userCtn_inner {
   display: flex;
   margin-bottom: 1rem;
-}
-.chatBox .userCtn {
-  display: flex;
+  flex: 1;
   align-items: end;
 }
-.chatBox div:nth-child(2) {
-  display: flex;
-  align-items: start;
+.userCtn_spacer {
+  flex: 1;
 }
-.userCtn span {
-  border-radius: 20px;
+
+.userCtn #textUser {
+  display: block;
+  border-radius: 20px 20px 0 20px;
   background-color: #0039b554;
-  width: auto;
+  max-width: calc(100% - 67px);
   height: auto;
+  overflow-wrap: break-word;
   padding: 1rem;
   color: #cacaca;
   font-size: medium;
   font-weight: 100;
 }
+.userCtn #textIACharacter {
+  background-color: #00b52854;
+  border-radius: 20px 20px 20px 0;
+  max-width: calc(100% - 67px);
+  height: auto;
+  overflow-wrap: break-word;
+  padding: 1rem;
+  color: #cacaca;
+  font-size: medium;
+  font-weight: 100;
+  flex: 1;
+}
 .userCtn .icon-user {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  border: 3px solid #0c63c7;
-  margin-left: 1rem;
+  border: 1px solid #0c63c7;
+  margin: 0 0 0 1rem;
 }
 .textAreaCtn {
   display: flex;
@@ -525,6 +530,17 @@ a {
   background-color: transparent;
 }
 /*chat grupal*/
+.chatBox {
+  color: #cacaca;
+  padding: 1rem;
+}
+.userCtnG span {
+  font-size: small;
+  font-weight: normal;
+  background-color: #00b52854;
+  padding: 4px 12px;
+  border-radius: 13px;
+}
 
 @media only screen and (max-width: 1180px) and (min-width: 300px) {
   .titlteSW {
@@ -684,8 +700,8 @@ a {
     margin: 8px 0;
   }
   .imgProfileChat {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     margin-right: 1rem;
     margin-bottom: 0;
   }
@@ -698,7 +714,7 @@ a {
     width: 100%;
     margin: 0;
     align-items: center;
-    height: 4rem;
+    height: 3rem;
     padding: 8px;
   }
   .chatBox {
@@ -709,10 +725,10 @@ a {
     width: 2rem;
     height: 2rem;
   }
-  .userCtn .imgProfileChat {
+  /*.userCtn .imgProfileChat {
     width: 2rem;
     height: 2rem;
-  }
+  }*/
   /*info peersonajes*/
   .factsCard {
     display: flex;
@@ -746,5 +762,21 @@ a {
   }
   .btnCtnChG button {
     top: 11rem;
+  }
+  /*apikey*/
+  .modal_containerapikey {
+    width: 100%;
+    height: 75vh;
+  }
+  .modalApikey input {
+    width: 35vh;
+    font-size: 12px;
+  }
+  .modalApikey p {
+    font-size: 16px;
+    text-align: center;
+  }
+  .modalApikey button {
+    font-size: small;
   }
 }
