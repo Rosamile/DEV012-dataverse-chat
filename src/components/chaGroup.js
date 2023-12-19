@@ -29,7 +29,7 @@ export const chatG = () => {
   //botones
   const btnChatGrupal = sectionchatG.querySelector("#buttonEnviarChatG");
   const textAreaChat = sectionchatG.querySelector("#writeHere");
-  let viewChatGrupal = sectionchatG.querySelector(".userCtn");
+  const viewChatGrupal = sectionchatG.querySelector(".userCtn");
 
   btnChatGrupal.addEventListener("click", () => {
     const newMsg = textAreaChat.value;

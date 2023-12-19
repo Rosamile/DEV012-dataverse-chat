@@ -20,10 +20,10 @@ function getCompletionChatGroup(usersText, name, APIKEY) {
           "content": usersText,
         }
       ]
+    })
   })
-  })
-  .then((res) => res.json())
-  .catch((error) => console.error("Apikey incorrecta", error));
+    .then((res) => res.json())
+    .catch((error) => ("Apikey incorrecta", error));
 
   return resIA;
 }

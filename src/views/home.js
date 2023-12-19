@@ -125,7 +125,7 @@ export const home = () => {
     ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(clearedData);
   });
 
-  buttonClear.addEventListener("click", (event) => {
+  buttonClear.addEventListener("click", () => {
     const cardsComponent = renderCards(data);
     cardView.innerHTML = "";
     cardView.appendChild(cardsComponent);

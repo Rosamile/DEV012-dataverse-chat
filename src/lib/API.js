@@ -31,7 +31,7 @@ function getCompletion(userText, name, APIKEY) {
     }),
   })
     .then((res) => res.json())
-    .catch((error) => console.error("Apikey incorrecta", error));
+    .catch((error) => ("Apikey incorrecta", error));
   return resIA;
 }
 export default getCompletion;

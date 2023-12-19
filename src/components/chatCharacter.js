@@ -10,8 +10,8 @@ export const chatI = (data) => {
 
 <div class="profiletCtn">
   <img class="imgProfileChat" id="imgProfileChatI${data.id}" src="${
-    data.imageUrl
-  }" alt="${data.id}">
+  data.imageUrl
+}" alt="${data.id}">
   <span class="nameFact" itemprop="name">${data.name}</span>
 </div>
 <div class="chatCtn">
@@ -32,9 +32,9 @@ export const chatI = (data) => {
 </div>`;
   const btnChatI = sectionchatI.querySelector("#buttonEnviarChatG");
   const textAreaChat = sectionchatI.querySelector("#writeHere");
-  let viewChatI = sectionchatI.querySelector(".userCtn");
+  const viewChatI = sectionchatI.querySelector(".userCtn");
 
-  btnChatI.addEventListener("click", (event) => {
+  btnChatI.addEventListener("click", () => {
     loading = true;
     const newMsg = textAreaChat.value;
     getCompletion(newMsg, data.name, apiKEY).then((res) => {
