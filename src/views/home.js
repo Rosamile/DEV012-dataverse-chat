@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { filterOrder } from "../components/filterOrder.js";
 import { Header } from "../components/header.js";
-import { Footer } from "../components/Footer.js";
+import { Footer } from "../components/footer.js";
 import { renderCards } from "../components/cards.js";
 import { stats } from "../components/stats.js";
 import data from "../data/data.js";
