@@ -1,7 +1,5 @@
 /* eslint-disable no-undef */
-import { describe } from "node:test";
-import { getCompletion } from "../lib/API.js";
-import { expect } from "@jest/globals";
+import getCompletion from "../lib/API.js";
 
 const OpenIAResponse = jest
   .fn()
@@ -17,19 +15,32 @@ describe("Endpoint de openIA", () => {
   it("La API es llamada con la información correcta", () => {
     const messages = [{ role: "user", content: "casa" }];
 
-    getCompletion("123456", messages);
+    const apikey = 123456;
+    getCompletion(apikey, messages);
 
     expect(global.fetch).toBeCalledWith(
       "https://api.openai.com/v1/chat/completions",
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer " + "123456",
+          Authorization: "Bearer " + apikey,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          temperature: 0,
+          max_tokens: 60,
           model: "gpt-3.5-turbo",
-          messages,
+          messages: [
+            {
+              role: "system",
+              content:
+                "Eres un personaje de star wars, concretamente ${name} responde todas las preguntas asumiendo este rol",
+            },
+            {
+              role: "user",
+              content: messages,
+            },
+          ],
         }),
       }
     );

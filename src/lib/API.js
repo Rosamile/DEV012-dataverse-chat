@@ -4,7 +4,6 @@ export const clearHistoryChat = () => (historyChat = []);
 export const upDateChat = (message) => {
   historyChat.push(message);
 };
-
 function getCompletion(userText, name, APIKEY) {
   if (historyChat.length === 0) {
     historyChat.push({
