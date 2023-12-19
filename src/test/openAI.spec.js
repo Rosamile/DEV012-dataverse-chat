@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import getCompletion from "../lib/API.js";
 
 const OpenIAResponse = jest
@@ -13,10 +12,11 @@ global.fetch = jest.fn(() =>
 
 describe("Endpoint de openIA", () => {
   it("La API es llamada con la información correcta", () => {
-    const messages = [{ role: "user", content: "casa" }];
+    const userText = "casa";
+    const name = "Yoda";
+    const apikey = "123456";
 
-    const apikey = 123456;
-    getCompletion(apikey, messages);
+    getCompletion(userText, name, apikey);
 
     expect(global.fetch).toBeCalledWith(
       "https://api.openai.com/v1/chat/completions",
@@ -33,12 +33,7 @@ describe("Endpoint de openIA", () => {
           messages: [
             {
               role: "system",
-              content:
-                "Eres un personaje de star wars, concretamente ${name} responde todas las preguntas asumiendo este rol",
-            },
-            {
-              role: "user",
-              content: messages,
+              content: `Eres un personaje de star wars, concretamente ${name} responde todas las preguntas asumiendo este rol`,
             },
           ],
         }),

@@ -1,5 +1,5 @@
 import { Header } from "../components/header.js";
-import { Footer } from "../components/Footer.js";
+import { Footer } from "../components/footer.js";
 import { renderFacts } from "../components/Facts.js";
 
 export const infoCharacters = () => {
