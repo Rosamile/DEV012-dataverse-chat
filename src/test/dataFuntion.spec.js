@@ -3,10 +3,9 @@ import {
   filterBySpecies,
   sortData,
   computeStats,
-
 } from "../lib/dataFuntion.js";
-import { data as fakeData } from "../data/data.js";
-
+import { data as fakeData } from "./data.js";
+import { renderCards } from "./../components/cards.js";
 
 describe("filterBySpecies", () => {
   it("debería filtrar correctamente por una especie, humano", () => {
@@ -98,4 +97,8 @@ describe("computeStats", () => {
     // Comprueba que el resultado sea la longitud de los datos de prueba
     expect(result).toBe(fakeData.length);
   });
+});
+
+test("la función crea un elemento ul", () => {
+  expect(renderCards(fakeData)).toBeDefined();
 });

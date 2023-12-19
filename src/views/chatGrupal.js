@@ -2,7 +2,6 @@ import { Header } from "../components/header.js";
 import { Footer } from "../components/Footer.js";
 import { chatG } from "../components/chaGroup.js";
 
-
 export const chatGroup = () => {
   const profileChatGroup = JSON.parse(localStorage.getItem("profileChat"));
   const renderChatG = chatG(profileChatGroup);

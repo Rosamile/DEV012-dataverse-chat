@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import getCompletionChatGroup from "./../lib/APIChatGroup.js";
 import data from "../data/data.js";
 
 export const chatG = () => {
+  let loading = false;
   const sectionchatG = document.createElement("section");
   const apiKEY = localStorage.getItem("APIKEY");
   sectionchatG.classList.add("containerChatG");
@@ -12,12 +14,10 @@ export const chatG = () => {
     alt="starwars">
 </div>
 <div class="chatCtn">
-
   <div class="chatBox">
     <div class="userCtn"></div>
-
+    <span class="loading-message" style="color: #640808;"></span>
   </div>
-
   <div class="textAreaCtn">
     <textarea placeholder="Comienza a chatear..." name="writeHere" id="writeHere" cols="30" rows="10"></textarea>
     <div id="buttonEnviarChatG">
@@ -30,18 +30,23 @@ export const chatG = () => {
   const btnChatGrupal = sectionchatG.querySelector("#buttonEnviarChatG");
   const textAreaChat = sectionchatG.querySelector("#writeHere");
   const viewChatGrupal = sectionchatG.querySelector(".userCtn");
+  const loadingMessage = sectionchatG.querySelector(".loading-message");
 
   btnChatGrupal.addEventListener("click", () => {
+    loading = true;
     const newMsg = textAreaChat.value;
+    loadingMessage.textContent = "escribiendo...";
+
     for (const element of data) {
       getCompletionChatGroup(newMsg, element.name, apiKEY).then((res) => {
+        loading = false;
+        loadingMessage.textContent = "";
         viewChatGrupal.innerHTML += `
 <div class="userCtn_inner">
   <img class="imgProfileChat" id="imgChatI"
     src="https://i.pinimg.com/564x/c6/20/1b/c6201b0f2993faf44d5ffba6bb92c245.jpg" alt="starwars">
   <span id="textIACharacter">${res.choices[0].message.content}</span>
   <div class="userCtn_spacer"></div>
-
 </div>
 `;
       });
@@ -52,8 +57,6 @@ export const chatG = () => {
   <div class="userCtn_spacer"></div>
   <span id="textUser">${newMsg}</span>
   <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
-
-
 </div>
 
 `;
