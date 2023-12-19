@@ -129,8 +129,7 @@ h4 {
   height: 6rem;
   justify-content: space-evenly;
 }
-.buttons #applyFilter,
-#clearFilter {
+.buttons #clearFilter {
   height: 35px;
   width: 6rem;
   border: none;
@@ -138,10 +137,6 @@ h4 {
   cursor: pointer;
   background-color: #ebebeb;
   color: #333333;
-}
-#applyFilter:hover {
-  background-color: #4ed62c;
-  color: white;
 }
 
 #clearFilter:hover {
@@ -577,6 +572,9 @@ a {
   .stadistics {
     padding-top: 1rem;
   }
+  .ctnModalMobile .icon {
+    display: flex;
+  }
   .containerFilter {
     background-color: rgba(0, 0, 0, 0.336);
     position: fixed;
@@ -611,8 +609,8 @@ a {
   .filterSpecies,
   .filterAffiliation,
   .sortBy {
-    height: 10rem;
-    margin: 2rem;
+    height: 4rem;
+    margin: 5px;
     width: 100%;
   }
 
@@ -622,6 +620,7 @@ a {
     background-color: transparent;
     color: aliceblue;
     width: 100%;
+    font-size: 10px;
   }
   .containerFilter select {
     width: 16rem;
@@ -629,6 +628,7 @@ a {
     color: aliceblue;
     width: 100%;
     display: flex;
+    font-size: 10px;
   }
   .containerFilter option {
     background-color: #3c0808;
@@ -637,21 +637,19 @@ a {
     font-size: 12px !important;
   }
   .buttons {
-    height: 10rem;
     width: 100%;
   }
-  .buttons #applyFilter,
-  #clearFilter {
+  .buttons #clearFilter {
     background-color: #d7d700;
-    width: 12rem;
-    height: 6rem;
+    width: 100%;
+    height: 2rem;
     margin-bottom: 1rem;
     color: #333333;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: x-large;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: bolder;
   }
   .stadistics {
     display: flex;
@@ -778,5 +776,19 @@ a {
   }
   .modalApikey button {
     font-size: small;
+  }
+  /*error*/
+  .errorBox .notFound h1 {
+    font-size: 80px;
+    letter-spacing: 2rem;
+  }
+
+  .errorBox .notFound h2 {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+
+  .errorBox a {
+    padding: 10px 20px;
   }
 }

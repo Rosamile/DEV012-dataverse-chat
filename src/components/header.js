@@ -5,7 +5,9 @@ export const Header = (variable) => {
     view = `
 <header>
   <a class="titlteSW" href="/">STAR WARS Verse</a>
-  <div class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
+        <div id="menu"  class="menu icon"><i class="fa-solid fa-bars icon" style="color: #d7d700 !important;"></i></div>
+
+  
 </header>
 <main>
   <h2>Bienvenido a la Galaxia de STAR WARS</h2>

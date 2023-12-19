@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 //import los components
 
 import { filterOrder } from "../components/filterOrder.js";
@@ -54,6 +55,20 @@ export const home = () => {
   const filterAffiliation = homeView.querySelector("#filteraffiliation");
   const selectSort = homeView.querySelector("#sortBy");
   const buttonClear = homeView.querySelector("#clearFilter");
+  const modalMobile = homeView.querySelector("#menu");
+
+  const menuMobile = filterOrderComponent;
+  modalMobile.addEventListener("click", (e) => {
+    e.preventDefault();
+    menuMobile.style.display = "block";
+
+    menuMobile.classList.add("containerFilter--show");
+  });
+  menuMobile.addEventListener("click", (e) => {
+    if (e.target === menuMobile) {
+      menuMobile.style.display = "none";
+    }
+  });
 
   statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
   ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);
