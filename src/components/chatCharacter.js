@@ -1,5 +1,4 @@
-import getCompletion, { upDateChat } from "../lib/API.js";
-import { clearHistoryChat } from "../lib/API.js";
+import getCompletion, { clearHistoryChat, upDateChat } from "../lib/API.js";
 
 export const chatI = (data) => {
   clearHistoryChat();
@@ -19,9 +18,10 @@ export const chatI = (data) => {
 
   <div class="chatBox">
     <div class="userCtn"></div>
+
     <div style="color:red;">${loading ? "cargando" : ""}</div>
   </div>
-  
+
   <div class="textAreaCtn">
     <textarea placeholder="Comienza a chatear..." name="writeHere" id="writeHere" cols="30" rows="5"></textarea>
     <div id="buttonEnviarChatG">
@@ -41,14 +41,19 @@ export const chatI = (data) => {
       loading = false;
       upDateChat(res.choices[0].message);
       viewChatI.innerHTML += `
-<div>
+<div class="userCtn_inner">
   <img class="imgProfileChat" id="imgChatI${data.id}" src="${data.imageUrl}" alt="${data.id}">
   <span id="textIACharacter">${res.choices[0].message.content}</span>
+  <div class="userCtn_spacer"></div>
+
 </div> `;
     });
     const questionUser = `
-<div>
-  <span id="textUser">${newMsg}</span>
+<div class="userCtn_inner">
+    <div class="userCtn_spacer"></div>
+
+    <span id="textUser">${newMsg}</span>
+
   <i class="fa-solid fa-jedi icon-user" style="color: aliceblue !important;"></i>
 </div>`;
     viewChatI.innerHTML += questionUser;
@@ -57,8 +62,3 @@ export const chatI = (data) => {
 
   return sectionchatI;
 };
-
-/* <div class="characterCtn">
-  <img class="imgProfileChati" id="imgChatI${data.id}" src="${data.imageUrl}" alt="${data.id}">
-  <span id="textIACharacter"></span>
-</div>*/
