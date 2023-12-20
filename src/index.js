@@ -23,5 +23,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 document.addEventListener("popstate", () => {
-  onURLChange(window.location);
+  onURLChange(window.location.pathname);
 });
