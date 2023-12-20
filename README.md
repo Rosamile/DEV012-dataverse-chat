@@ -1,4 +1,4 @@
-# Dataverse Chat
+# Star Wars Dataverse Chat 
 
 ## Preámbulo
 
@@ -34,18 +34,53 @@ Como usuario, mi deseo es sumergirme en la experiencia única de interactuar con
 Como usuario, me encantaría contar con la capacidad de organizar y personalizar mi experiencia en la SPA de Star Wars mediante la opción de filtrar y ordenar las tarjetas de los personajes. Deseo tener la libertad de seleccionar y visualizar solo aquellos personajes que más me interesan o explorarlos en un orden específico. Esto podría incluir opciones de filtrado por afiliación (Rebelde, Imperial, Jedi, Sith), orden alfabético, o incluso según la cronología de la saga.
 
 La implementación de esta funcionalidad debería ser intuitiva y fácil de usar, permitiéndome ajustar la visualización de las tarjetas según mis preferencias. La posibilidad de personalizar la presentación de la información no solo mejoraría mi experiencia de usuario, sino que también me permitiría explorar y disfrutar del universo de Star Wars de la manera que más me atraiga. Que la Fuerza guíe mis elecciones mientras navego por las tarjetas de los personajes en esta fascinante SPA.
-## Prototipos
 
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
 
 ## Baja fidelidad
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+**`Mobile`**
+
+<sub>Mobile Información del personaje</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/59db225b-9b7f-4263-92c1-32a2c439a5cb" width=220>
+
+<sub>Mobile Apikey</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/b904e9f9-6f49-425a-9cca-be1c7ff8cd5b" width=220>
+
+<sub>Mobile Principal</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/4bbb3af8-df40-4230-9f77-dfe4037bf73d" width=220>
+
+<sub>Mobile Chat</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/4125fb9e-3ca8-4b84-95cf-cde746c225ec" width=220>
+
+**`Desktop`**
+
+<sub>Desktop Información del personaje</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/cd0c84bd-a2c3-4a14-9238-309f1469ba0a" width=420>
+
+<sub>Desktop Chat</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/cae68c31-e1e9-4b3a-b15f-9848f0cc272e" width=420>
+
+<sub>Desktop Apikey/sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/00019a79-6dcf-4c7f-ab4f-faa41f343f16" width=420>
+
+<sub>Desktop Principal</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/eed28d79-8a11-4515-ab88-ed7e2d41dc62" width=420>
+
 
 ## Alta fidelidad
 
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+**`Mobile`**
 
-## Test de usabilidad
+<sub>Mobile Principal</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/5e93107e-c258-4912-b655-a71e5f6c98cf" width=220>
 
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
+<sub>Mobile Información del personaje</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/03b70efa-fa01-4355-bf56-9650974816e7" width=220>
+
+<sub>Mobile Apikey</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/8a10780f-b819-46cf-bab3-17899cd83af8" width=220>
+
+<sub>Mobile Chat</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/7c873cd8-08fa-49b0-9a9e-924f7c74b9b0" width=220>
+
+**`Desktop`**
+
+<sub>Desktop Apikey/sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/ce8f627d-425f-4778-86f0-fca9de24dfc6" width=420>
+
+<sub>Desktop Información del personaje</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/6d056396-2712-479d-8807-b9cba3ffab85" width=420>
+
+<sub>Desktop Chat</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/73c6e78e-bf56-40d0-b2f5-e11939962bcb" width=420>
+
+<sub>Desktop Principal</sub><br><img src = "https://github.com/1Tai7/DEV012-dataverse-chat/assets/91899554/9c698df2-67ef-4604-9147-02d665a4bd37" width=420>
+
+## Autores
+
+Rosa Sarmiento & Ilce Garcia
