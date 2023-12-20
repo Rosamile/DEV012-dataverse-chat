@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { filterOrder } from "../components/filterOrder.js";
-import { Header } from "../components/header.js";
-import { Footer } from "../components/footer.js";
-import { renderCards } from "../components/cards.js";
-import { stats } from "../components/stats.js";
-import data from "../data/data.js";
+import { filterOrder } from "./../components/filterOrder.js";
+import { Header } from "./../components/header.js";
+import { Footer } from "./../components/footer.js";
+import { renderCards } from "./../components/cards.js";
+import { stats } from "./../components/stats.js";
+import data from "./../data/data.js";
 import {
   filterByAffiliation,
   filterBySpecies,
@@ -12,9 +12,9 @@ import {
   clearData,
   computeStats,
   ageSumatory,
-} from "../lib/dataFuntion.js";
-import { apiKeyButton } from "../components/buttonApiKey.js";
-import { chatGruopButton } from "../components/buttonChG.js";
+} from "./../lib/dataFuntion.js";
+import { apiKeyButton } from "./../components/buttonApiKey.js";
+import { chatGruopButton } from "./../components/buttonChG.js";
 
 export const home = () => {
   let valueSelectSpecies = "";

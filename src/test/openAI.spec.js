@@ -1,4 +1,4 @@
-import getCompletion from "../lib/API.js";
+import getCompletion from "./../lib/API.js";
 
 const OpenIAResponse = jest
   .fn()

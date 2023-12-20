@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import getCompletionChatGroup from "./../lib/APIChatGroup.js";
-import data from "../data/data.js";
+import data from "./../data/data.js";
 
 export const chatG = () => {
   let loading = false;
