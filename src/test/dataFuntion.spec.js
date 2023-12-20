@@ -3,11 +3,11 @@ import {
   filterBySpecies,
   sortData,
   computeStats,
-} from "../lib/dataFuntion.js";
+} from "./../lib/dataFuntion.js";
 import { data as fakeData } from "./data.js";
 import { renderCards } from "./../components/cards.js";
-import { Footer } from "../components/footer.js";
-import { Header } from "../components/header.js";
+import { Footer } from "./../components/footer.js";
+import { Header } from "./../components/header.js";
 
 describe("filterBySpecies", () => {
   it("debería filtrar correctamente por una especie, humano", () => {

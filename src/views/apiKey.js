@@ -1,6 +1,6 @@
-import { Header } from "../components/header.js";
-import { Footer } from "../components/footer.js";
-import { modalChat } from "../components/modal.js";
+import { Header } from "./../components/header.js";
+import { Footer } from "./../components/footer.js";
+import { modalChat } from "./../components/modal.js";
 
 export const apiKey = () => {
   // Crear el elemento apiKeyView

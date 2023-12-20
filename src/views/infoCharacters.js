@@ -1,6 +1,6 @@
-import { Header } from "../components/header.js";
-import { Footer } from "../components/footer.js";
-import { renderFacts } from "../components/Facts.js";
+import { Header } from "./../components/header.js";
+import { Footer } from "./../components/footer.js";
+import { renderFacts } from "./../components/Facts.js";
 
 export const infoCharacters = () => {
   const profile = JSON.parse(localStorage.getItem("profile"));
