@@ -1,6 +1,6 @@
-import { Header } from "../components/header.js";
-import { Footer } from "../components/Footer.js";
-import { chatI } from "../components/chatCharacter.js";
+import { Header } from "./../components/header.js";
+import { Footer } from "./../components/footer.js";
+import { chatI } from "./../components/chatCharacter.js";
 
 export const chatindividual = () => {
   const profileChat = JSON.parse(localStorage.getItem("profileChat"));

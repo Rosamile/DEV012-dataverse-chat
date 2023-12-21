@@ -1,11 +1,10 @@
-//import los components
-
-import { filterOrder } from "../components/filterOrder.js";
-import { Header } from "../components/header.js";
-import { Footer } from "../components/Footer.js";
-import { renderCards } from "../components/cards.js";
-import { stats } from "../components/stats.js";
-import data from "../data/data.js";
+/* eslint-disable no-unused-vars */
+import { filterOrder } from "./../components/filterOrder.js";
+import { Header } from "./../components/header.js";
+import { Footer } from "./../components/footer.js";
+import { renderCards } from "./../components/cards.js";
+import { stats } from "./../components/stats.js";
+import data from "./../data/data.js";
 import {
   filterByAffiliation,
   filterBySpecies,
@@ -13,9 +12,9 @@ import {
   clearData,
   computeStats,
   ageSumatory,
-} from "../lib/dataFuntion.js";
-import { apiKeyButton } from "../components/buttonApiKey.js";
-import { chatGruopButton } from "../components/buttonChG.JS";
+} from "./../lib/dataFuntion.js";
+import { apiKeyButton } from "./../components/buttonApiKey.js";
+import { chatGruopButton } from "./../components/buttonChG.js";
 
 export const home = () => {
   let valueSelectSpecies = "";
@@ -54,6 +53,20 @@ export const home = () => {
   const filterAffiliation = homeView.querySelector("#filteraffiliation");
   const selectSort = homeView.querySelector("#sortBy");
   const buttonClear = homeView.querySelector("#clearFilter");
+  const modalMobile = homeView.querySelector("#menu");
+
+  const menuMobile = filterOrderComponent;
+  modalMobile.addEventListener("click", (e) => {
+    e.preventDefault();
+    menuMobile.style.display = "block";
+
+    menuMobile.classList.add("containerFilter--show");
+  });
+  menuMobile.addEventListener("click", (e) => {
+    if (e.target === menuMobile) {
+      menuMobile.style.display = "none";
+    }
+  });
 
   statsResult.innerHTML = "Resultado de tu selección: " + computeStats(data);
   ageSumResult.innerHTML = "Sumatoria de edades: " + ageSumatory(data);

@@ -20,10 +20,10 @@ export const modalChat = () => {
     } else {
       localStorage.setItem("APIKEY", password.value);
     }
-    if(password.value!==""){ password.value = "*".repeat(password.value.length);
+    if (password.value !== "") {
+      password.value = "*".repeat(password.value.length);
     }
   });
-  
 
   return modalChats;
 };

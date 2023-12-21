@@ -1,5 +1,4 @@
 function getCompletionChatGroup(usersText, name, APIKEY) {
-  
   const resIA = fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -10,23 +9,22 @@ function getCompletionChatGroup(usersText, name, APIKEY) {
       temperature: 0,
       max_tokens: 60,
       model: "gpt-3.5-turbo",
-      "messages": [
+      messages: [
         {
-          "role": "system",
-          "content": `Eres ${name} personaje de star wars responde las preguntas asumiendo ese rol.`
+          role: "system",
+          content: `Eres ${name} personaje de star wars responde las preguntas asumiendo ese rol.`,
         },
         {
-          "role": "user",
-          "content": usersText,
-        }
-      ]
-    })
+          role: "user",
+          content: usersText,
+        },
+      ],
+    }),
   })
     .then((res) => res.json())
-    .catch((error) => ("Apikey incorrecta", error));
+    .catch((error) => alert("Error!!!")(error));
 
   return resIA;
 }
 
 export default getCompletionChatGroup;
-

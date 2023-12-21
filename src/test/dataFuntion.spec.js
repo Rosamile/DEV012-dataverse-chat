@@ -3,10 +3,11 @@ import {
   filterBySpecies,
   sortData,
   computeStats,
-
-} from "../lib/dataFuntion.js";
-import { data as fakeData } from "../data/data.js";
-
+} from "./../lib/dataFuntion.js";
+import { data as fakeData } from "./data.js";
+import { renderCards } from "./../components/cards.js";
+import { Footer } from "./../components/footer.js";
+import { Header } from "./../components/header.js";
 
 describe("filterBySpecies", () => {
   it("debería filtrar correctamente por una especie, humano", () => {
@@ -98,4 +99,15 @@ describe("computeStats", () => {
     // Comprueba que el resultado sea la longitud de los datos de prueba
     expect(result).toBe(fakeData.length);
   });
+});
+
+test("la función crea un elemento ul", () => {
+  expect(renderCards(fakeData)).toBeDefined();
+});
+
+test("la funcion crea un elemento footer", () => {
+  expect(Footer(fakeData)).toBeDefined();
+});
+test("la funcion crea un elemento header", () => {
+  expect(Header(fakeData)).toBeDefined();
 });
