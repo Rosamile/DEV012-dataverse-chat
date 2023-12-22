@@ -40,11 +40,13 @@ export const renderView = (pathname = {}) => {
 };
 //Encontrar la vista correcta para el pathname minuto 21:18
 export const navigateTo = (pathname, props = {}) => {
+  // Extraer la ruta y los parámetros de consulta
+  const [path, params] = pathname.split('?');
   //actualizar la vista con pushState
-  const URLvisited = window.location.origin + pathname;
-  history.pushState({}, "", URLvisited);
+  const URLvisited = window.location.origin + path + `?id=${params}`;
+  history.pushState(props, "", URLvisited);
   //renderizar la vista con el pathname y propiedades
-  renderView(pathname, props);
+  renderView(path, props);
 };
 export const onURLChange = (pathname) => {
   //parse the location for the pathname and search params, es decir, convertir de algo a algo
