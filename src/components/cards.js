@@ -1,3 +1,6 @@
+
+import {navigateTo} from "../router.js";
+
 export const renderCards = (data) => {
   const ul = document.createElement("ul");
   ul.classList.add("character");
@@ -36,15 +39,16 @@ export const renderCards = (data) => {
 
 `;
 
+//Modificar 
     const img = list.querySelector(".imgCards");
     img.addEventListener("click", () => {
       localStorage.setItem("profile", JSON.stringify(element));
-      location.href = `/facts?id=${element.id}`;
+      navigateTo(`/facts?id=${element.id}`);
     });
     const button = list.querySelector(".bChat");
     button.addEventListener("click", () => {
       localStorage.setItem("profileChat", JSON.stringify(element));
-      location.href = `/chatindi?id=${element.id}`;
+      navigateTo(`/chatindi?id=${element.id}`);
     });
     ul.appendChild(list);
   });
