@@ -39,7 +39,7 @@ export const renderCards = (data) => {
 
 `;
 
-//Modificar 
+
     const img = list.querySelector(".imgCards");
     img.addEventListener("click", () => {
       localStorage.setItem("profile", JSON.stringify(element));
